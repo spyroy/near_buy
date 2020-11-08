@@ -76,23 +76,24 @@ public class register extends AppCompatActivity {
                     mPassword.setError("password must be at least 6 characters.");
                 }
 
+                progressBar.setVisibility(View.VISIBLE);
+
                 //connect to firebase
                 fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressBar.setVisibility(View.VISIBLE);
                         if(task.isSuccessful()){
                             Toast.makeText(register.this,"User created",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }
                         else{
                             Toast.makeText(register.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            //Toast.makeText(register.this,"ERROR!" , Toast.LENGTH_LONG).show();
                             try {
                                 TimeUnit.SECONDS.sleep(4);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
+                            progressBar.setVisibility(View.INVISIBLE);
                             startActivity(new Intent(getApplicationContext(),register.class));
                         }
                     }

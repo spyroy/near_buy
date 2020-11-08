@@ -62,6 +62,8 @@ public class Login extends AppCompatActivity {
                     mPassword.setError("password must be at least 6 characters.");
                 }
 
+                progressBar.setVisibility(View.VISIBLE);
+
                 //Autentication
                 fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
@@ -72,12 +74,12 @@ public class Login extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(Login.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            //Toast.makeText(register.this,"ERROR!" , Toast.LENGTH_LONG).show();
                             try {
                                 TimeUnit.SECONDS.sleep(4);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
+                            progressBar.setVisibility(View.INVISIBLE);
                             startActivity(new Intent(getApplicationContext(),Login.class));
                         }
                     }
