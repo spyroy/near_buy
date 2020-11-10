@@ -41,7 +41,7 @@ public class register extends AppCompatActivity {
         button2 = findViewById(R.id.already_have_account);
 
         fAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.login_progress_bar);
+        progressBar = findViewById(R.id.progressBar);
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));

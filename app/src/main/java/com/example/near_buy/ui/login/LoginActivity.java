@@ -40,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         final EditText usernameEditText = findViewById(R.id.Email);
         final EditText passwordEditText = findViewById(R.id.pass);
         final Button loginButton = findViewById(R.id.Login_button);
-        final ProgressBar loadingProgressBar = findViewById(R.id.login_progress_bar);
+        final ProgressBar loadingProgressBar = findViewById(R.id.progressBar);
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override

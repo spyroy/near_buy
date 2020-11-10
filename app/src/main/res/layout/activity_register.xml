@@ -137,7 +137,7 @@
             app:backgroundTint="#AEA6A6" />
 
         <ProgressBar
-            android:id="@+id/login_progress_bar"
+            android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
             android:layout_width="84dp"
             android:layout_height="88dp"
