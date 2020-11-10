@@ -18,8 +18,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-import org.w3c.dom.Text;
-
 import java.util.concurrent.TimeUnit;
 
 public class register extends AppCompatActivity {
@@ -39,11 +37,11 @@ public class register extends AppCompatActivity {
         mPassword = findViewById(R.id.pass);
         mConfirm = findViewById(R.id.Confirm_pass);
         mRegisterbtn = findViewById(R.id.Register_button);
-        mLoginBtn = findViewById(R.id.login);
-        button2 = findViewById(R.id.button2);
+        mLoginBtn = findViewById(R.id.Login_button);
+        button2 = findViewById(R.id.already_have_account);
 
         fAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.login_progress_bar);
 
         if(fAuth.getCurrentUser() != null){
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
@@ -108,4 +106,6 @@ public class register extends AppCompatActivity {
             }
         });
     }
+
+
 }

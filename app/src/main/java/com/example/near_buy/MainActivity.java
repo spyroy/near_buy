@@ -21,4 +21,9 @@ public class MainActivity extends AppCompatActivity {
         startActivity(new Intent(getApplicationContext(),Login.class));
         finish();
     }
+
+    public void register(View view) {
+        Intent intent = new Intent(MainActivity.this, register.class);
+        startActivity(intent);
+    }
 }

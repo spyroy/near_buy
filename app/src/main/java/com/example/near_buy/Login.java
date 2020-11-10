@@ -30,17 +30,14 @@ public class Login extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login2);
-
-
-
+        setContentView(R.layout.activity_login);
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.pass);
         mLoginbtn = findViewById(R.id.Login_button);
         mCreateBtn = findViewById(R.id.Have_account);
 
         fAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBar);
+        progressBar = findViewById(R.id.login_progress_bar);
 
         mLoginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
