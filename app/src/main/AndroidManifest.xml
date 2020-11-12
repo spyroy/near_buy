@@ -11,10 +11,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nearbuy">
+        <activity
+            android:name=".items"
+            android:label="Items Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.near_buy.MainActivity" />
+        </activity>
 
         <activity
-            android:name=".ui.login.LoginActivity"
-            android:label="@string/title_activity_login"></activity>
+            android:name=".stores"
+            android:label="Stores Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.near_buy.MainActivity" />
+        </activity>
+        <activity
+            android:name=".ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/Theme.Nearbuy.NoActionBar" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -22,7 +39,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login" />
+        <activity
+            android:name=".login"
+            android:label="Login Activity"
+            android:parentActivityName=".register">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.near_buy.register" />
+        </activity>
+
         <activity android:name=".register" />
 
         <meta-data

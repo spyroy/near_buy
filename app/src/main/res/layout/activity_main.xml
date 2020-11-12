@@ -5,31 +5,42 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#F1F0EE"
     android:paddingTop="?attr/actionBarSize">
 
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/nav_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?android:attr/windowBackground"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
 
-    <fragment
-        android:id="@+id/nav_host_fragment"
-        android:name="androidx.navigation.fragment.NavHostFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:defaultNavHost="true"
-        app:layout_constraintBottom_toTopOf="@id/nav_view"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:navGraph="@navigation/mobile_navigation" />
+    <Button
+        android:id="@+id/main_specials"
+        android:layout_width="222dp"
+        android:layout_height="71dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:text="SPECIALS"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:backgroundTint="?android:attr/colorActivatedHighlight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_items" />
+
+    <Button
+        android:id="@+id/main_items"
+        android:layout_width="222dp"
+        android:layout_height="71dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:onClick="launchItemsActivity"
+        android:text="ITEMS"
+        android:textColor="@color/white"
+        android:textSize="36sp"
+        app:backgroundTint="?android:attr/colorActivatedHighlight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_stores" />
 
     <TextView
         android:id="@+id/main"
@@ -41,36 +52,27 @@
         android:text="@string/app_name"
         android:textAllCaps="true"
         android:textColor="#E1CB07"
-        android:textSize="30sp"
+        android:textSize="48sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/landing_textview"
-        android:layout_width="182dp"
-        android:layout_height="49dp"
+    <Button
+        android:id="@+id/main_stores"
+        android:onClick="launchStoresActivity"
+        android:layout_width="222dp"
+        android:layout_height="71dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="64dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="@string/search"
-        android:textAllCaps="true"
+        android:text="STORES"
+        android:textColor="@color/white"
         android:textSize="36sp"
+        app:backgroundTint="?android:attr/colorActivatedHighlight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/main" />
 
-    <TextView
-        android:id="@+id/landing_textview2"
-        android:layout_width="182dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="16dp"
-        android:gravity="center|center_vertical"
-        android:text="Stores"
-        android:textAllCaps="true"
-        android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/landing_textview" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

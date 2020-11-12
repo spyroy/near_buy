@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.concurrent.TimeUnit;
 
-public class Login extends AppCompatActivity {
+public class login extends AppCompatActivity {
     EditText mEmail,mPassword;
     Button mLoginbtn;
     TextView mCreateBtn;
@@ -66,30 +66,25 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
-                            Toast.makeText(Login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }
                         else{
-                            Toast.makeText(Login.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            Toast.makeText(login.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             try {
                                 TimeUnit.SECONDS.sleep(4);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
                             progressBar.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(getApplicationContext(),Login.class));
+                            startActivity(new Intent(getApplicationContext(), login.class));
                         }
                     }
                 });
             }
         });
 
-        mCreateBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),register.class));
-            }
-        });
+
     }
 
 

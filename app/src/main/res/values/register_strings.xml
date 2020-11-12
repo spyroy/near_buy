@@ -4,4 +4,6 @@
     <string name="full_name">Full Name</string>
     <string name="confirm_pass">Confirm Password</string>
     <string name="login_screen_title">log in to your account</string>
+    <string name="already_have_account">Already have an account? CLICK</string>
+
 </resources>
