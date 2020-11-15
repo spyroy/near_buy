@@ -18,6 +18,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import org.w3c.dom.Document;
 
 import java.util.concurrent.TimeUnit;
 
@@ -28,6 +33,9 @@ public class register extends AppCompatActivity {
     TextView mLoginBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
+    FirebaseDatabase database;
+    DatabaseReference mDatabase;
+    static final String USER = "user";
 
     private static final String LOG_TAG =
             register.class.getSimpleName();
@@ -45,6 +53,8 @@ public class register extends AppCompatActivity {
         button2 = findViewById(R.id.already_have_account);
 
         fAuth = FirebaseAuth.getInstance();
+        database = FirebaseDatabase.getInstance();
+        mDatabase = database.getReference(USER);
         progressBar = findViewById(R.id.progressBar);
 
         if(fAuth.getCurrentUser() != null){
@@ -86,6 +96,7 @@ public class register extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(register.this,"User created",Toast.LENGTH_SHORT).show();
+                            FirebaseUser user = fAuth.getCurrentUser();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }
                         else{
