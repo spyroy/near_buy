@@ -17,6 +17,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,6 +29,10 @@ public class login extends AppCompatActivity {
     TextView mCreateBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
+
+    DatabaseReference myRef;
+    String pId;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +45,8 @@ public class login extends AppCompatActivity {
 
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
+        FirebaseUser User = fAuth.getCurrentUser();
+
 
         mLoginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +77,13 @@ public class login extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
+
+                            pId = fAuth.getUid();
+                            myRef = FirebaseDatabase.getInstance().getReference("users").child(pId);
+                            user user= new user();
+                            user.setId(pId);
+                            user.setName(User.getDisplayName());
+                            myRef.setValue(user);
                         }
                         else{
                             Toast.makeText(login.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -82,6 +98,8 @@ public class login extends AppCompatActivity {
                     }
                 });
             }
+
+
         });
 
 
