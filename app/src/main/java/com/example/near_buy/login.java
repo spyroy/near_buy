@@ -81,8 +81,8 @@ public class login extends AppCompatActivity {
                             pId = fAuth.getUid();
                             myRef = FirebaseDatabase.getInstance().getReference("users").child(pId);
                             user user= new user();
-                            user.setId(pId);
                             user.setName(User.getDisplayName());
+                            user.setId(pId);
                             myRef.setValue(user);
                         }
                         else{
