@@ -1,0 +1,44 @@
+com/example/near_buy/data/model/LoggedInUser.java
+ com.example.near_buy.data.model.LoggedInUser
+com/example/near_buy/items.java
+ com.example.near_buy.items
+com/example/near_buy/MyAdapter.java
+ com.example.near_buy.MyAdapter
+ com.example.near_buy.MyAdapter$1
+ com.example.near_buy.MyAdapter$MyViewHolder
+com/example/near_buy/data/LoginDataSource.java
+ com.example.near_buy.data.LoginDataSource
+com/example/near_buy/SecondFragment.java
+ com.example.near_buy.SecondFragment
+ com.example.near_buy.SecondFragment$1
+com/example/near_buy/stores.java
+ com.example.near_buy.stores
+com/example/near_buy/user.java
+ com.example.near_buy.user
+com/example/near_buy/register.java
+ com.example.near_buy.register
+ com.example.near_buy.register$1
+ com.example.near_buy.register$1$1
+com/example/near_buy/MainActivity.java
+ com.example.near_buy.MainActivity
+com/example/near_buy/FirstFragment.java
+ com.example.near_buy.FirstFragment
+ com.example.near_buy.FirstFragment$1
+com/example/near_buy/login.java
+ com.example.near_buy.login
+ com.example.near_buy.login$1
+ com.example.near_buy.login$1$1
+com/example/near_buy/ScrollingActivity.java
+ com.example.near_buy.ScrollingActivity
+ com.example.near_buy.ScrollingActivity$1
+com/example/near_buy/BuildConfig.java
+ com.example.near_buy.BuildConfig
+com/example/near_buy/data/LoginRepository.java
+ com.example.near_buy.data.LoginRepository
+com/example/near_buy/data/Result.java
+ com.example.near_buy.data.Result
+ com.example.near_buy.data.Result$1
+ com.example.near_buy.data.Result$Error
+ com.example.near_buy.data.Result$Success
+com/example/near_buy/single_store.java
+ com.example.near_buy.single_store
