@@ -49,11 +49,13 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.near_buy.register" />
         </activity>
-        <activity android:name=".register" />
+        <activity android:name=".register"
+            android:label="Register Activity"
+            android:parentActivityName=".MainActivity" />
 
         <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.near_buy.MainActivity" />
     </application>
 
 </manifest>

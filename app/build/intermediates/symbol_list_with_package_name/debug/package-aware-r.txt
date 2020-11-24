@@ -1923,6 +1923,7 @@ id linear
 id listMode
 id list_item
 id log_in_title
+id logout
 id main
 id mainImageView
 id main_items

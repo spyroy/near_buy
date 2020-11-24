@@ -71,19 +71,22 @@ public class login extends AppCompatActivity {
                 progressBar.setVisibility(View.VISIBLE);
 
                 //Authentication
-                fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    fAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(login.this,"Logged in successfully",Toast.LENGTH_SHORT).show();
+//                            pId = fAuth.getUid();
+//                            myRef = FirebaseDatabase.getInstance().getReference("users").child(pId);
+//                            user user= new user();
+//                            user.setName(User.getDisplayName());
+//                            user.setId(pId);
+//                            myRef.setValue(user);
+
+
+
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
-                            pId = fAuth.getUid();
-                            myRef = FirebaseDatabase.getInstance().getReference("users").child(pId);
-                            user user= new user();
-                            user.setName(User.getDisplayName());
-                            user.setId(pId);
-                            myRef.setValue(user);
                         }
                         else{
                             Toast.makeText(login.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();

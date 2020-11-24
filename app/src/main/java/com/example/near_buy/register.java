@@ -37,8 +37,8 @@ public class register extends AppCompatActivity {
     DatabaseReference mDatabase;
     static final String USER = "user";
 
-    private static final String LOG_TAG =
-            register.class.getSimpleName();
+//    private static final String LOG_TAG =
+//            register.class.getSimpleName();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,6 +65,7 @@ public class register extends AppCompatActivity {
         mRegisterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Toast.makeText(register.this,"im here",Toast.LENGTH_SHORT).show();
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
                 String confirm = mConfirm.getText().toString().trim();
@@ -116,6 +117,11 @@ public class register extends AppCompatActivity {
 
 
 
+    }
+    public void launchLoginActivity(View view)
+    {
+        Intent intent = new Intent(this, login.class);
+        startActivity(intent);
     }
 
 

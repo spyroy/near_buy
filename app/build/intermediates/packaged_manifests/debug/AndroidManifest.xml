@@ -67,11 +67,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.near_buy.register" />
         </activity>
-        <activity android:name="com.example.near_buy.register" />
+        <activity
+            android:name="com.example.near_buy.register"
+            android:label="Register Activity"
+            android:parentActivityName="com.example.near_buy.MainActivity" />
 
         <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.near_buy.MainActivity" />
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"

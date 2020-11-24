@@ -12,8 +12,10 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
+    FirebaseAuth fAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,9 +23,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void logout(View view){
+    public void logout(){
+        fAuth = FirebaseAuth.getInstance();
+        FirebaseUser user = fAuth.getCurrentUser();
+        if(fAuth.getCurrentUser() == null){
+            Toast.makeText(MainActivity.this,"you are not logged in",Toast.LENGTH_SHORT).show();
+            return;
+        }
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), login.class));
+        startActivity(new Intent(getApplicationContext(), register.class));
+        Toast.makeText(MainActivity.this,"logged out",Toast.LENGTH_SHORT).show();
         finish();
     }
 
@@ -55,7 +64,12 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             case R.id.menu_user:
-                setContentView(R.layout.activity_register);
+                Intent intent = new Intent(this, register.class);
+                startActivity(intent);
+                return true;
+
+            case R.id.logout:
+                logout();
                 return true;
 
 
@@ -63,13 +77,9 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
 
-    }
 
-    public void launchLoginActivity(View view)
-    {
-        Intent intent = new Intent(this, login.class);
-        startActivity(intent);
 
     }
+
 
 }
