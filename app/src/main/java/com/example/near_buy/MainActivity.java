@@ -1,18 +1,22 @@
 package com.example.near_buy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
+import androidx.navigation.ui.AppBarConfiguration;
+import androidx.navigation.ui.NavigationUI;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth fAuth;
@@ -21,7 +25,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.BottomNavigationView);
+        NavController navController = Navigation.findNavController(this,  R.id.fragment);
+        NavigationUI.setupWithNavController(bottomNavigationView, navController);
+        Set<Integer> topLevelDestinations = new HashSet<>();
+        topLevelDestinations.add(R.id.homeFrag);
+        topLevelDestinations.add(R.id.storeFrag);
+        topLevelDestinations.add(R.id.searchFrag);
+        topLevelDestinations.add(R.id.userFrag);
+        AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations).build();
+        NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
+
+
+
     }
+
 
     public void logout(){
         fAuth = FirebaseAuth.getInstance();
@@ -46,40 +65,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main_menu, menu);
-        return true;
+    public void LaunchRegister(View view) {
+        Intent intent = new Intent(this, register.class);
+        startActivity(intent);
+    }
+    public void LaunchLogin(View view) {
+        Intent intent = new Intent(this, login.class);
+        startActivity(intent);
+
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
-        //HANDLING ITEM SELECTIONS
-        switch(item.getItemId()){
-
-            case R.id.menu_search:
-                Toast.makeText(this, "SOON TO BE IMPLEMENTED", Toast.LENGTH_SHORT).show();
-                return true;
-
-            case R.id.menu_user:
-                Intent intent = new Intent(this, register.class);
-                startActivity(intent);
-                return true;
-
-            case R.id.logout:
-                logout();
-                return true;
-
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-
-
-
-    }
 
 
 }

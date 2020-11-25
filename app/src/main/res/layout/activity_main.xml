@@ -5,74 +5,38 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F1F0EE"
-    android:paddingTop="?attr/actionBarSize">
+    android:background="@drawable/mall_background2"
+    android:paddingTop="?attr/actionBarSize"
+    tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/main_specials"
-        android:layout_width="222dp"
-        android:layout_height="71dp"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"
-        android:text="SPECIALS"
-        android:textColor="@color/white"
-        android:textSize="36sp"
-        app:backgroundTint="?android:attr/colorActivatedHighlight"
+    <fragment
+        android:id="@+id/fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="409dp"
+        android:layout_height="572dp"
+        android:layout_marginBottom="70dp"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_items" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:navGraph="@navigation/my_nav" />
 
-    <Button
-        android:id="@+id/main_items"
-        android:layout_width="222dp"
-        android:layout_height="71dp"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="32dp"
-        android:onClick="launchItemsActivity"
-        android:text="ITEMS"
-        android:textColor="@color/white"
-        android:textSize="36sp"
-        app:backgroundTint="?android:attr/colorActivatedHighlight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main_stores" />
-
-    <TextView
-        android:id="@+id/main"
-        android:layout_width="wrap_content"
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/BottomNavigationView"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/arbutus"
-        android:padding="2dp"
-        android:text="@string/app_name"
-        android:textAllCaps="true"
-        android:textColor="#E1CB07"
-        android:textSize="48sp"
+        android:background="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:menu="@menu/bottom_menu">
 
-    <Button
-        android:id="@+id/main_stores"
-        android:onClick="launchStoresActivity"
-        android:layout_width="222dp"
-        android:layout_height="71dp"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="64dp"
-        android:text="STORES"
-        android:textColor="@color/white"
-        android:textSize="36sp"
-        app:backgroundTint="?android:attr/colorActivatedHighlight"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/main" />
 
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
