@@ -47,10 +47,10 @@ public class login extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
         FirebaseUser User = fAuth.getCurrentUser();
 
-
         mLoginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
 
@@ -83,8 +83,6 @@ public class login extends AppCompatActivity {
 //                            user.setId(pId);
 //                            myRef.setValue(user);
 
-
-
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                         }
@@ -96,7 +94,7 @@ public class login extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             progressBar.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(getApplicationContext(), login.class));
+                            //startActivity(new Intent(getApplicationContext(), login.class));
                         }
                     }
                 });

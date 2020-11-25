@@ -57,15 +57,10 @@ public class register extends AppCompatActivity {
         mDatabase = database.getReference(USER);
         progressBar = findViewById(R.id.progressBar);
 
-        if(fAuth.getCurrentUser() != null){
-            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-            finish();
-        }
-
         mRegisterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(register.this,"im here",Toast.LENGTH_SHORT).show();
+
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
                 String confirm = mConfirm.getText().toString().trim();
@@ -108,7 +103,7 @@ public class register extends AppCompatActivity {
                                 e.printStackTrace();
                             }
                             progressBar.setVisibility(View.INVISIBLE);
-                            startActivity(new Intent(getApplicationContext(),register.class));
+                            //startActivity(new Intent(getApplicationContext(),register.class));
                         }
                     }
                 });

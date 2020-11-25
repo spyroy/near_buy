@@ -12,18 +12,17 @@ com/example/near_buy/stores.java
  com.example.near_buy.stores
 com/example/near_buy/user.java
  com.example.near_buy.user
-com/example/near_buy/register.java
- com.example.near_buy.register
- com.example.near_buy.register$1
- com.example.near_buy.register$1$1
-com/example/near_buy/MainActivity.java
- com.example.near_buy.MainActivity
+com/example/near_buy/data/Result.java
+ com.example.near_buy.data.Result
+ com.example.near_buy.data.Result$1
+ com.example.near_buy.data.Result$Error
+ com.example.near_buy.data.Result$Success
+com/example/near_buy/storeFrag.java
+ com.example.near_buy.storeFrag
 com/example/near_buy/UserFrag.java
  com.example.near_buy.UserFrag
-com/example/near_buy/login.java
- com.example.near_buy.login
- com.example.near_buy.login$1
- com.example.near_buy.login$1$1
+com/example/near_buy/single_store.java
+ com.example.near_buy.single_store
 com/example/near_buy/SearchFrag.java
  com.example.near_buy.SearchFrag
 com/example/near_buy/ScrollingActivity.java
@@ -35,12 +34,13 @@ com/example/near_buy/BuildConfig.java
  com.example.near_buy.BuildConfig
 com/example/near_buy/data/LoginRepository.java
  com.example.near_buy.data.LoginRepository
-com/example/near_buy/storeFrag.java
- com.example.near_buy.storeFrag
-com/example/near_buy/data/Result.java
- com.example.near_buy.data.Result
- com.example.near_buy.data.Result$1
- com.example.near_buy.data.Result$Error
- com.example.near_buy.data.Result$Success
-com/example/near_buy/single_store.java
- com.example.near_buy.single_store
+com/example/near_buy/login.java
+ com.example.near_buy.login
+ com.example.near_buy.login$1
+ com.example.near_buy.login$1$1
+com/example/near_buy/register.java
+ com.example.near_buy.register
+ com.example.near_buy.register$1
+ com.example.near_buy.register$1$1
+com/example/near_buy/MainActivity.java
+ com.example.near_buy.MainActivity

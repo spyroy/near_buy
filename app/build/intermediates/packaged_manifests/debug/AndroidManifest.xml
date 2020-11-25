@@ -71,7 +71,7 @@
         <activity
             android:name="com.example.near_buy.register"
             android:label="Register Activity"
-            android:parentActivityName="com.example.near_buy.MainActivity" />
+            android:parentActivityName="com.example.near_buy.register" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

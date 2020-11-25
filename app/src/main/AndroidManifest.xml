@@ -51,7 +51,7 @@
         </activity>
         <activity android:name=".register"
             android:label="Register Activity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".register" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

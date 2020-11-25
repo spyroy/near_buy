@@ -9,6 +9,7 @@ import androidx.navigation.ui.NavigationUI;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -36,23 +37,17 @@ public class MainActivity extends AppCompatActivity {
         topLevelDestinations.add(R.id.userFrag);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(topLevelDestinations).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-
-
-
     }
 
 
-    public void logout(){
+    public void logout(View view){
         fAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = fAuth.getCurrentUser();
         if(fAuth.getCurrentUser() == null){
             Toast.makeText(MainActivity.this,"you are not logged in",Toast.LENGTH_SHORT).show();
             return;
         }
         FirebaseAuth.getInstance().signOut();
-        startActivity(new Intent(getApplicationContext(), register.class));
-        Toast.makeText(MainActivity.this,"logged out",Toast.LENGTH_SHORT).show();
-        finish();
+        Toast.makeText(MainActivity.this,"logged out successfully",Toast.LENGTH_SHORT).show();
     }
 
     public void launchStoresActivity(View view) {
@@ -66,13 +61,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void LaunchRegister(View view) {
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() != null){
+            Toast.makeText(MainActivity.this,"You are already logged in",Toast.LENGTH_SHORT).show();
+            return;
+        }
         Intent intent = new Intent(this, register.class);
         startActivity(intent);
     }
     public void LaunchLogin(View view) {
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() != null){
+            Toast.makeText(MainActivity.this,"You are already logged in",Toast.LENGTH_SHORT).show();
+            return;
+        }
         Intent intent = new Intent(this, login.class);
         startActivity(intent);
+    }
 
+    public void switch_user(View view) {
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() == null){
+            Toast.makeText(MainActivity.this,"You are not logged in",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(MainActivity.this,"change user",Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, login.class);
+        startActivity(intent);
     }
 
 
