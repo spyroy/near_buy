@@ -127,6 +127,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:text="Create a new account"
+        android:onClick="launchRegisterActivity"
         app:backgroundTint="#43A047"
         app:layout_constraintBottom_toTopOf="@+id/forgot_password"
         app:layout_constraintEnd_toEndOf="parent"

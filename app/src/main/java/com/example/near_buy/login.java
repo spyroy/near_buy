@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 public class login extends AppCompatActivity {
     EditText mEmail,mPassword;
-    Button mLoginbtn;
+    Button mLoginbtn,NewAccount;
     TextView mCreateBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -42,6 +42,7 @@ public class login extends AppCompatActivity {
         mPassword = findViewById(R.id.pass);
         mLoginbtn = findViewById(R.id.Login_button);
         mCreateBtn = findViewById(R.id.already_have_account);
+        NewAccount = findViewById(R.id.create_new_account);
 
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
@@ -105,6 +106,10 @@ public class login extends AppCompatActivity {
 
 
     }
-
+    public void launchRegisterActivity(View view)
+    {
+        Intent intent = new Intent(this, register.class);
+        startActivity(intent);
+    }
 
 }
