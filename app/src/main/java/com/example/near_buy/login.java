@@ -109,9 +109,13 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String email = mEmail.getText().toString().trim();
+
+                progressBar.setVisibility(View.VISIBLE);
+
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is required");
                     Toast.makeText(login.this,"Please enter your email above and click again", Toast.LENGTH_LONG).show();
+                    progressBar.setVisibility(View.INVISIBLE);
                     return;
                 }
 
@@ -122,6 +126,17 @@ public class login extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(login.this,"Email was sent to: " + email, Toast.LENGTH_LONG).show();
                                 }
+                                else{
+                                    Toast.makeText(login.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                                    try {
+                                        TimeUnit.SECONDS.sleep(4);
+                                    } catch (InterruptedException e) {
+                                        e.printStackTrace();
+                                    }
+                                    progressBar.setVisibility(View.INVISIBLE);
+                                    //startActivity(new Intent(getApplicationContext(), login.class));
+                                }
+
                             }
                         });
             }

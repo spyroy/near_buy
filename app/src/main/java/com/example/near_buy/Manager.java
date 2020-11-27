@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Manager {
     private  String name,email,store;
+    private  int Have_business;
     private List<ContactsContract.CommonDataKinds.Relation> products = new ArrayList<>();
 
     public Manager(){
@@ -16,6 +17,7 @@ public class Manager {
     public Manager(String name,String email){
         this.name = name;
         this.email = email;
+        Have_business = 1;
     }
 
     //retrieve info from database

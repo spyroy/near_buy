@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class user {
-    private  String name,email;
+    private String name,email;
+    private int Have_business;
     private List<ContactsContract.CommonDataKinds.Relation> items = new ArrayList<>();
 
     public user(){
@@ -16,6 +17,7 @@ public class user {
     public user(String name,String email){
         this.name = name;
         this.email = email;
+        Have_business = 0;
     }
 
     //retrieve info from database
