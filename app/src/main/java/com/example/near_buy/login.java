@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
 
 public class login extends AppCompatActivity {
     EditText mEmail,mPassword;
-    Button mLoginbtn,NewAccount;
+    Button mLoginbtn,NewAccount, forgot;
     TextView mCreateBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -43,6 +43,7 @@ public class login extends AppCompatActivity {
         mLoginbtn = findViewById(R.id.Login_button);
         mCreateBtn = findViewById(R.id.already_have_account);
         NewAccount = findViewById(R.id.create_new_account);
+        forgot = findViewById(R.id.forgot_password);
 
         fAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
@@ -104,8 +105,31 @@ public class login extends AppCompatActivity {
 
         });
 
+        forgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String email = mEmail.getText().toString().trim();
+                if(TextUtils.isEmpty(email)){
+                    mEmail.setError("Email is required");
+                    Toast.makeText(login.this,"Please enter your email above and click again", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull Task<Void> task) {
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(login.this,"Email was sent to: " + email, Toast.LENGTH_LONG).show();
+                                }
+                            }
+                        });
+            }
+        });
+
 
     }
+
     public void launchRegisterActivity(View view)
     {
         Intent intent = new Intent(this, register.class);
