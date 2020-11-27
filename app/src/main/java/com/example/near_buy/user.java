@@ -1,11 +1,28 @@
 package com.example.near_buy;
 
+import android.provider.ContactsContract;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class user {
-    private  String name,id;
+    private  String name,email;
+    private List<ContactsContract.CommonDataKinds.Relation> items = new ArrayList<>();
 
     public user(){
-        name = "";
-        id = "";
+    }
+
+    //send data at register
+    public user(String name,String email){
+        this.name = name;
+        this.email = email;
+    }
+
+    //retrieve info from database
+    public user(String name, String email, List<ContactsContract.CommonDataKinds.Relation> items){
+        this.name = name;
+        this.email = email;
+        this.items = items;
     }
 
     public String getName() {
@@ -16,11 +33,17 @@ public class user {
         this.name = name;
     }
 
-    public String getId() {
-        return id;
+    public String getEmail() { return email; }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    public void setId(String id) {
-        this.id = id;
+    public List<ContactsContract.CommonDataKinds.Relation> getItems() {
+        return items;
+    }
+
+    public void setItems(List<ContactsContract.CommonDataKinds.Relation> items) {
+        this.items = items;
     }
 }

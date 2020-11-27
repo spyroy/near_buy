@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -30,6 +31,7 @@ import java.util.concurrent.TimeUnit;
 public class register extends AppCompatActivity {
     EditText mFullname,mEmail,mPassword,mConfirm;
     Button mRegisterbtn,button2;
+    CheckBox Cbox;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -51,6 +53,7 @@ public class register extends AppCompatActivity {
         mRegisterbtn = findViewById(R.id.Register_button);
         mLoginBtn = findViewById(R.id.Login_button);
         button2 = findViewById(R.id.already_have_account);
+        Cbox = findViewById(R.id.business_checkbox);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -93,6 +96,20 @@ public class register extends AppCompatActivity {
                         if(task.isSuccessful()){
                             Toast.makeText(register.this,"User created",Toast.LENGTH_SHORT).show();
                             FirebaseUser user = fAuth.getCurrentUser();
+                            if(Cbox.isClickable()){
+                                //start manager register activity
+                            }
+                            user u = new user(mFullname.getText().toString().trim(),email);
+                            FirebaseDatabase.getInstance().getReference("users")
+                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                    .setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful()){
+                                        Toast.makeText(register.this, "user saved!", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                             startActivity(new Intent(getApplicationContext(),MainActivity.class));
                         }
                         else{

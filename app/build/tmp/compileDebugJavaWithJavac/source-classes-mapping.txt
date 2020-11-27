@@ -16,6 +16,9 @@ com/example/near_buy/register.java
  com.example.near_buy.register
  com.example.near_buy.register$1
  com.example.near_buy.register$1$1
+ com.example.near_buy.register$1$1$1
+com/example/near_buy/Manager.java
+ com.example.near_buy.Manager
 com/example/near_buy/MainActivity.java
  com.example.near_buy.MainActivity
 com/example/near_buy/UserFrag.java
