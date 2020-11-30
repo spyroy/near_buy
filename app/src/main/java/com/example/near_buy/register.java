@@ -29,7 +29,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class register extends AppCompatActivity {
-    EditText mFullname,mEmail,mPassword,mConfirm;
+    EditText mFullname,mEmail,mPassword,mConfirm,mphone,maddress;
     Button mRegisterbtn,button2;
     CheckBox Cbox;
     TextView mLoginBtn;
@@ -50,6 +50,8 @@ public class register extends AppCompatActivity {
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.pass);
         mConfirm = findViewById(R.id.Confirm_pass);
+        maddress = findViewById(R.id.addressCo);
+        mphone = findViewById(R.id.phone);
         mRegisterbtn = findViewById(R.id.Register_button);
         mLoginBtn = findViewById(R.id.Login_button);
         button2 = findViewById(R.id.already_have_account);
@@ -67,6 +69,8 @@ public class register extends AppCompatActivity {
                 String email = mEmail.getText().toString().trim();
                 String password = mPassword.getText().toString().trim();
                 String confirm = mConfirm.getText().toString().trim();
+                String address = maddress.getText().toString().trim();
+                int phone = mphone.getInputType();
 
                 if(TextUtils.isEmpty(email)){
                     mEmail.setError("Email is required.");
@@ -99,7 +103,7 @@ public class register extends AppCompatActivity {
                             if(Cbox.isClickable()){
                                 //start manager register activity
                             }
-                            user u = new user(mFullname.getText().toString().trim(),email);
+                            user u = new user(mFullname.getText().toString().trim(),email,address,phone);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {
