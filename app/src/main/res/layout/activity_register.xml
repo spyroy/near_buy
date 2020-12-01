@@ -131,7 +131,7 @@
             android:drawablePadding="5dp"
             android:ems="10"
             android:hint="phone"
-            android:inputType="phone"
+            android:inputType="numberDecimal"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"

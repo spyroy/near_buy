@@ -52,12 +52,12 @@
         "source": "C:\\Users\\ahmad\\AndroidStudioProjects\\near_buy\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_mail_whit.xml"
     },
     {
-        "merged": "C:\\Users\\ahmad\\AndroidStudioProjects\\near_buy\\app\\build\\intermediates\\res\\merged\\debug\\layout_store_row.xml.flat",
-        "source": "C:\\Users\\ahmad\\AndroidStudioProjects\\near_buy\\app\\src\\main\\res\\layout\\store_row.xml"
-    },
-    {
         "merged": "C:\\Users\\ahmad\\AndroidStudioProjects\\near_buy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_location.png.flat",
         "source": "C:\\Users\\ahmad\\AndroidStudioProjects\\near_buy\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_location.png"
+    },
+    {
+        "merged": "C:\\Users\\ahmad\\AndroidStudioProjects\\near_buy\\app\\build\\intermediates\\res\\merged\\debug\\layout_store_row.xml.flat",
+        "source": "C:\\Users\\ahmad\\AndroidStudioProjects\\near_buy\\app\\src\\main\\res\\layout\\store_row.xml"
     },
     {
         "merged": "C:\\Users\\ahmad\\AndroidStudioProjects\\near_buy\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_launcher_background.png.flat",

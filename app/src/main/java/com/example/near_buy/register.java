@@ -2,8 +2,18 @@ package com.example.near_buy;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -11,6 +21,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,22 +36,33 @@ import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Document;
 
+import java.util.List;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 
-public class register extends AppCompatActivity {
-    EditText mFullname,mEmail,mPassword,mConfirm,mphone,maddress;
-    Button mRegisterbtn,button2;
+public class register extends AppCompatActivity implements LocationListener {
+    EditText mFullname, mEmail, mPassword, mConfirm, mphone, maddress;
+    Button mRegisterbtn, button2;
     CheckBox Cbox;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
     FirebaseDatabase database;
     DatabaseReference mDatabase;
+    private ImageButton gpsBtn;
     static final String USER = "user";
 
-//    private static final String LOG_TAG =
+    private static final int LOCATION_REQUEST_CODE = 100;
+
+    //    private static final String LOG_TAG =
 //            register.class.getSimpleName();
+    private String[] locationPermissoin;
+
+    private LocationManager locationManager;
+
+    private double latitude, longitude;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,12 +77,29 @@ public class register extends AppCompatActivity {
         mRegisterbtn = findViewById(R.id.Register_button);
         mLoginBtn = findViewById(R.id.Login_button);
         button2 = findViewById(R.id.already_have_account);
+        gpsBtn = findViewById(R.id.gpsBt);
         Cbox = findViewById(R.id.business_checkbox);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
         mDatabase = database.getReference(USER);
         progressBar = findViewById(R.id.progressBar);
+
+        gpsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // detect current location
+                if (checklocationPerission()) {
+                    //already allowed
+                    detectLocation();
+                } else {
+                    // not allowed , request
+                    requestlocationPrmission();
+                }
+            }
+        });
+        //init permissoin arry
+        locationPermissoin = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
 
         mRegisterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,52 +111,51 @@ public class register extends AppCompatActivity {
                 String address = maddress.getText().toString().trim();
                 int phone = mphone.getInputType();
 
-                if(TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required.");
                     return;
                 }
 
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     mPassword.setError("Password is required.");
                     return;
                 }
 
-                if(!confirm.equals(password)){
+                if (!confirm.equals(password)) {
                     mConfirm.setError("incorrect password.");
                     return;
                 }
 
-                if(password.length() < 6){
+                if (password.length() < 6) {
                     mPassword.setError("password must be at least 6 characters.");
                 }
 
                 progressBar.setVisibility(View.VISIBLE);
 
                 //connect to firebase
-                fAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                            Toast.makeText(register.this,"User created",Toast.LENGTH_SHORT).show();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(register.this, "User created", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = fAuth.getCurrentUser();
-                            if(Cbox.isClickable()){
+                            if (Cbox.isClickable()) {
                                 //start manager register activity
                             }
-                            user u = new user(mFullname.getText().toString().trim(),email,address,phone);
+                            user u = new user(mFullname.getText().toString().trim(), email, address, phone);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    if(task.isSuccessful()){
+                                    if (task.isSuccessful()) {
                                         Toast.makeText(register.this, "user saved!", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                        }
-                        else{
-                            Toast.makeText(register.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        } else {
+                            Toast.makeText(register.this, " ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             try {
                                 TimeUnit.SECONDS.sleep(4);
                             } catch (InterruptedException e) {
@@ -132,13 +170,101 @@ public class register extends AppCompatActivity {
         });
 
 
-
     }
-    public void launchLoginActivity(View view)
-    {
+
+    public void launchLoginActivity(View view) {
         Intent intent = new Intent(this, login.class);
         startActivity(intent);
     }
+
+
+    private void detectLocation() {
+        Toast.makeText(this, "Please waite ... ", Toast.LENGTH_SHORT).show();
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, this);
+
+    }
+
+    private boolean checklocationPerission(){
+        boolean result = ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) ==
+                (PackageManager.PERMISSION_GRANTED);
+        return  result;
+    }
+    private void requestlocationPrmission(){
+        ActivityCompat.requestPermissions(this,locationPermissoin,LOCATION_REQUEST_CODE);
+    }
+
+    @Override
+    public void onLocationChanged(@NonNull Location location) {
+        latitude = location.getLatitude();
+        longitude = location.getLongitude();
+        findAddress();
+    }
+
+    private void findAddress() {
+        Geocoder geocoder;
+        List<Address>addresses;
+        geocoder = new Geocoder(this, Locale.getDefault());
+        try{
+            addresses = geocoder.getFromLocation(latitude,longitude,1);
+            String addres = addresses.get(0).getAddressLine(0);// complet address
+            String city = addresses.get(0).getLocality();
+            String state = addresses.get(0).getAdminArea();
+            String country = addresses.get(0).getCountryName();
+            maddress.setText(addres);
+        }catch (Exception e){
+            Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void onStatusChanged(String provider, int status, Bundle extras){
+
+    }
+
+
+    @Override
+    public void onProviderEnabled(@NonNull String provider) {
+
+    }
+
+    @Override
+    public void onProviderDisabled(@NonNull String provider) {
+        Toast.makeText(this, "Please trun un GPS location", Toast.LENGTH_SHORT).show();
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case LOCATION_REQUEST_CODE:
+            if(grantResults.length>0){
+                boolean locationaccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                if(locationaccepted)
+                {
+                    // permission allowed
+                    detectLocation();
+                }
+                else{
+                    // permission denied
+                    Toast.makeText(this, "Location permission is necessary", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
 
 
 }
