@@ -1,11 +1,11 @@
 [
     {
-        "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_search.xml.flat",
-        "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\src\\main\\res\\layout\\fragment_search.xml"
-    },
-    {
         "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_mail_whit.png.flat",
         "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_mail_whit.png"
+    },
+    {
+        "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_search.xml.flat",
+        "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\src\\main\\res\\layout\\fragment_search.xml"
     },
     {
         "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ovad_sabich.jpg.flat",
@@ -32,16 +32,16 @@
         "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_person.png"
     },
     {
-        "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_user_24.png.flat",
-        "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_user_24.png"
+        "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_store_24.xml.flat",
+        "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_store_24.xml"
     },
     {
         "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi_ic_baseline_location.png.flat",
         "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_location.png"
     },
     {
-        "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_baseline_store_24.xml.flat",
-        "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v21\\ic_baseline_store_24.xml"
+        "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_user_24.png.flat",
+        "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_user_24.png"
     },
     {
         "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi_ic_baseline_store_24.png.flat",
@@ -60,12 +60,12 @@
         "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-xhdpi\\ic_baseline_home_24.png"
     },
     {
-        "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_user_24.png.flat",
-        "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_user_24.png"
-    },
-    {
         "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_home.xml.flat",
         "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\src\\main\\res\\layout\\fragment_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi_ic_baseline_user_24.png.flat",
+        "source": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\generated\\res\\pngs\\debug\\drawable-ldpi\\ic_baseline_user_24.png"
     },
     {
         "merged": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy5\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
