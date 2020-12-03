@@ -1720,6 +1720,7 @@ id BOTTOM_START
 id BottomNavigationView
 id CTRL
 id Confirm_pass
+id Description
 id Email
 id FUNCTION
 id Login_button
@@ -1790,6 +1791,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addShop
 id address
 id addressCo
 id adjust_height
@@ -1821,6 +1823,8 @@ id business_checkbox
 id button
 id button2
 id button3
+id button4
+id button5
 id buttonPanel
 id cache_measures
 id cancel_action
@@ -1932,6 +1936,7 @@ id imageButton24
 id imageButton25
 id imageButton26
 id imageButton27
+id imageView
 id info
 id invisible
 id italic
@@ -2088,7 +2093,10 @@ id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
 id stop
+id storeCategory
 id storeFrag
+id storeLocation
+id storeName
 id storeRecyclerView
 id store_description
 id store_image_view
@@ -2234,6 +2242,7 @@ layout activity_register
 layout activity_scrolling
 layout activity_single_store
 layout activity_stores
+layout add_shop_layout
 layout content_scrolling
 layout content_stores
 layout custom_dialog

@@ -18,8 +18,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.TimeUnit;
 
@@ -85,7 +89,28 @@ public class login extends AppCompatActivity {
 //                            user.setId(pId);
 //                            myRef.setValue(user);
 
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                            DatabaseReference users = FirebaseDatabase.getInstance().getReference("users");
+                            DatabaseReference uid = users.child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            DatabaseReference hb = uid.child("have_business");
+                            hb.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    long result = (long) snapshot.getValue();
+                                    if(result == 1){
+                                        startActivity(new Intent(getApplicationContext(),Seller_main_activity.class));
+                                    }
+                                    else{
+                                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                    }
+                                }
+
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
+
+                                }
+                            });
+
+                            //startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                         }
                         else{

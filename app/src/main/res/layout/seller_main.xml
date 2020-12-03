@@ -9,7 +9,7 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="410dp"
+        android:layout_width="411dp"
         android:layout_height="79dp"
         android:text="add buisness"
         app:backgroundTint="@color/common_google_signin_btn_text_dark_focused"
@@ -36,11 +36,11 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button"
-        app:layout_constraintVertical_bias="0.346" />
+        app:layout_constraintVertical_bias="0.36" />
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="404dp"
+        android:layout_width="411dp"
         android:layout_height="79dp"
         android:text="go to costumer menu"
         app:backgroundTint="@color/black"
@@ -49,5 +49,17 @@
         app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button2"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="411dp"
+        android:layout_height="79dp"
+        android:text="My profile"
+        app:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
         app:layout_constraintVertical_bias="0.036" />
 </androidx.constraintlayout.widget.ConstraintLayout>
