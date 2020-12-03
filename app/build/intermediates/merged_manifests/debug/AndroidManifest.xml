@@ -8,6 +8,8 @@
         android:minSdkVersion="16"
         android:targetSdkVersion="30" />
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission
         android:id="@+id/row_layout"
         android:name="android.permission.INTERNET" />
@@ -64,6 +66,14 @@
             android:name="com.example.near_buy.login"
             android:label="Login Activity"
             android:parentActivityName="com.example.near_buy.register" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.near_buy.register" />
+        </activity>
+        <activity
+            android:name="com.example.near_buy.Seller_main_activity"
+            android:label="Seller Main Activity"
+            android:parentActivityName="com.example.near_buy.MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.near_buy.register" />

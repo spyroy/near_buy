@@ -52,6 +52,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.near_buy.register" />
         </activity>
+        <activity
+            android:name=".Seller_main_activity"
+            android:label="Seller Main Activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.near_buy.register" />
+        </activity>
         <activity android:name=".register"
             android:label="Register Activity"
             android:parentActivityName=".register" />

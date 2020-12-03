@@ -6,7 +6,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -20,6 +22,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -101,6 +104,35 @@ public class register extends AppCompatActivity implements LocationListener {
         //init permissoin arry
         locationPermissoin = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
 
+        Cbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
+                    builder.setCancelable(true);
+                    builder.setTitle("Are you sure you have a business?");
+                    builder.setMessage("Marking this will take you to seller menu");
+                    builder.setPositiveButton("Confirm",
+                            new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int id) {
+                                    Cbox.setChecked(true);
+                                }
+                            });
+                    builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int id) {
+                            Cbox.setChecked(false);
+                        }
+                    });
+
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                }
+            }
+        });
+
+
         mRegisterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,7 +141,17 @@ public class register extends AppCompatActivity implements LocationListener {
                 String password = mPassword.getText().toString().trim();
                 String confirm = mConfirm.getText().toString().trim();
                 String address = maddress.getText().toString().trim();
-                int phone = mphone.getInputType();
+                int phone = 0;
+                String mmm = mphone.getText().toString();
+
+                if(mphone.getText().toString() != null && mphone.getText().toString().length() > 0){
+                    try {
+                        phone = Integer.parseInt(mphone.getText().toString());
+                    } catch(Exception e) {
+                        phone =  -1;   // or some value to mark this field is wrong. or make a function validates field first ...
+                    }
+                }
+
 
                 if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required.");
@@ -133,16 +175,30 @@ public class register extends AppCompatActivity implements LocationListener {
                 progressBar.setVisibility(View.VISIBLE);
 
                 //connect to firebase
+                int finalPhone = phone;
                 fAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(register.this, "User created", Toast.LENGTH_SHORT).show();
                             FirebaseUser user = fAuth.getCurrentUser();
-                            if (Cbox.isClickable()) {
+                            if (Cbox.isChecked()) {
                                 //start manager register activity
+                                Manager m = new Manager(mFullname.getText().toString().trim(), email, address, finalPhone, 1);
+                                FirebaseDatabase.getInstance().getReference("users")
+                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                        .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    @Override
+                                    public void onComplete(@NonNull Task<Void> task) {
+                                        if (task.isSuccessful()) {
+                                            Toast.makeText(register.this, "seller saved!", Toast.LENGTH_SHORT).show();
+                                        }
+                                    }
+                                });
+                                startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
+                                return;
                             }
-                            user u = new user(mFullname.getText().toString().trim(), email, address, phone);
+                            user u = new user(mFullname.getText().toString().trim(), email, address, finalPhone,0);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {

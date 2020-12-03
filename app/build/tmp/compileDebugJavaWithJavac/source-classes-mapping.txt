@@ -17,7 +17,11 @@ com/example/near_buy/register.java
  com.example.near_buy.register$1
  com.example.near_buy.register$2
  com.example.near_buy.register$2$1
- com.example.near_buy.register$2$1$1
+ com.example.near_buy.register$2$2
+ com.example.near_buy.register$3
+ com.example.near_buy.register$3$1
+ com.example.near_buy.register$3$1$1
+ com.example.near_buy.register$3$1$2
 com/example/near_buy/Manager.java
  com.example.near_buy.Manager
 com/example/near_buy/MainActivity.java
@@ -37,6 +41,8 @@ com/example/near_buy/ScrollingActivity.java
  com.example.near_buy.ScrollingActivity$1
 com/example/near_buy/homeFrag.java
  com.example.near_buy.homeFrag
+com/example/near_buy/Seller_main_activity.java
+ com.example.near_buy.Seller_main_activity
 com/example/near_buy/BuildConfig.java
  com.example.near_buy.BuildConfig
 com/example/near_buy/data/LoginRepository.java

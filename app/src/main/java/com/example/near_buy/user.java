@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class user {
-    private String name,email,address;
+    private String name;
+    private String email;
+    private String address;
     private int Have_business,phone;
     private List<ContactsContract.CommonDataKinds.Relation> items = new ArrayList<>();
 
@@ -14,7 +16,7 @@ public class user {
     }
 
     //send data at register
-    public user(String name,String email,String address,int phone){
+    public user(String name,String email,String address,int phone, int have_business){
         this.name = name;
         this.email = email;
         Have_business = 0;
@@ -36,6 +38,10 @@ public class user {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getAddress() {
         return address;
     }
@@ -52,10 +58,6 @@ public class user {
         this.phone = phone;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getEmail() { return email; }
 
     public void setEmail(String email) {
@@ -68,5 +70,13 @@ public class user {
 
     public void setItems(List<ContactsContract.CommonDataKinds.Relation> items) {
         this.items = items;
+    }
+
+    public int getHave_business() {
+        return Have_business;
+    }
+
+    public void setHave_business(int have_business) {
+        Have_business = have_business;
     }
 }
