@@ -4,8 +4,9 @@
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.INTERNET"
-        android:id="@+id/row_layout"/>
+    <uses-permission
+        android:id="@+id/row_layout"
+        android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,9 +15,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Nearbuy">
-        <activity android:name=".single_store"
-            android:parentActivityName=".stores"
-            android:label="Details"/>
+        <activity android:name=".RegisterSellerActivity"></activity>
+        <activity
+            android:name=".single_store"
+            android:label="Details"
+            android:parentActivityName=".stores" />
         <activity
             android:name=".items"
             android:label="Items Activity"
@@ -68,7 +71,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.near_buy.Seller_main_activity" />
         </activity>
-        <activity android:name=".register"
+        <activity
+            android:name=".register"
             android:label="Register Activity"
             android:parentActivityName=".register" />
 

@@ -89,28 +89,29 @@ public class login extends AppCompatActivity {
 //                            user.setId(pId);
 //                            myRef.setValue(user);
 
-                            DatabaseReference users = FirebaseDatabase.getInstance().getReference("users");
-                            DatabaseReference uid = users.child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-                            DatabaseReference hb = uid.child("have_business");
-                            hb.addValueEventListener(new ValueEventListener() {
-                                @Override
-                                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                    long result = (long) snapshot.getValue();
-                                    if(result == 1){
-                                        startActivity(new Intent(getApplicationContext(),Seller_main_activity.class));
-                                    }
-                                    else{
-                                        startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                                    }
-                                }
+                           // DatabaseReference users = FirebaseDatabase.getInstance().getReference("users");
+                            //DatabaseReference uid = users.child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            //DatabaseReference hb = uid.child("have_business");
+                            //hb.addValueEventListener(new ValueEventListener() {
 
-                                @Override
-                                public void onCancelled(@NonNull DatabaseError error) {
+                                //@Override
+                               // public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    //long result = (long) snapshot.getValue();
+                                   // if(result == 1){
+                                       // startActivity(new Intent(getApplicationContext(),Seller_main_activity.class));
+                                   // }
+                                    //else{
+                                        //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                   // }
+                               // }
 
-                                }
-                            });
+                              //  @Override
+                               // public void onCancelled(@NonNull DatabaseError error) {
 
-                            //startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                                //}
+                           // });
+
+                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
 
                         }
                         else{

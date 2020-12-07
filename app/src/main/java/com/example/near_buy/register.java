@@ -46,8 +46,7 @@ import java.util.concurrent.TimeUnit;
 
 public class register extends AppCompatActivity implements LocationListener {
     EditText mFullname, mEmail, mPassword, mConfirm, mphone, maddress;
-    Button mRegisterbtn, button2;
-    CheckBox Cbox;
+    Button mRegisterbtn, button2,button3;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
     ProgressBar progressBar;
@@ -80,8 +79,8 @@ public class register extends AppCompatActivity implements LocationListener {
         mRegisterbtn = findViewById(R.id.Register_button);
         mLoginBtn = findViewById(R.id.Login_button);
         button2 = findViewById(R.id.already_have_account);
+        button3 = findViewById(R.id.register_seller);
         gpsBtn = findViewById(R.id.gpsBt);
-        Cbox = findViewById(R.id.business_checkbox);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -104,35 +103,40 @@ public class register extends AppCompatActivity implements LocationListener {
         //init permissoin arry
         locationPermissoin = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
 
-        Cbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked) {
-                    AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
-                    builder.setCancelable(true);
-                    builder.setTitle("Are you sure you have a business?");
-                    builder.setMessage("Marking this will take you to seller menu");
-                    builder.setPositiveButton("Confirm",
-                            new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int id) {
-                                    Cbox.setChecked(true);
-                                }
-                            });
-                    builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int id) {
-                            Cbox.setChecked(false);
-                        }
-                    });
+        //Cbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+           // @Override
+           // public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+              //  if(isChecked) {
+                 //   AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
+                   // builder.setCancelable(true);
+                   //builder.setTitle("Are you sure you have a business?");
+                    //builder.setMessage("Marking this will take you to seller menu");
+                   // builder.setPositiveButton("Confirm",
+                          // new DialogInterface.OnClickListener() {
+                               // @Override
+                               // public void onClick(DialogInterface dialog, int id) {
+                                   // Cbox.setChecked(true);
+                                //}
+                            //});
+                    //builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+                       // @Override
+                       // public void onClick(DialogInterface dialog, int id) {
+                          //  Cbox.setChecked(false);
+                       //}
+                  // });
 
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-                }
+                  //  AlertDialog dialog = builder.create();
+                   // dialog.show();
+               // }
+            //}
+       // });
+
+        button3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(register.this,RegisterSellerActivity.class));
             }
         });
-
-
         mRegisterbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,25 +184,25 @@ public class register extends AppCompatActivity implements LocationListener {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            Toast.makeText(register.this, "User created", Toast.LENGTH_SHORT).show();
-                            FirebaseUser user = fAuth.getCurrentUser();
-                            if (Cbox.isChecked()) {
+                           // Toast.makeText(register.this, "User created", Toast.LENGTH_SHORT).show();
+                          // FirebaseUser user = fAuth.getCurrentUser();
+                            //if (Cbox.isChecked()) {
                                 //start manager register activity
-                                Manager m = new Manager(mFullname.getText().toString().trim(), email, address, finalPhone, 1);
-                                FirebaseDatabase.getInstance().getReference("users")
-                                        .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                        .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    @Override
-                                    public void onComplete(@NonNull Task<Void> task) {
-                                        if (task.isSuccessful()) {
-                                            Toast.makeText(register.this, "seller saved!", Toast.LENGTH_SHORT).show();
-                                        }
-                                    }
-                                });
-                                startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
-                                return;
-                            }
-                            user u = new user(mFullname.getText().toString().trim(), email, address, finalPhone,0);
+                                //Manager m = new Manager(mFullname.getText().toString().trim(), email, address, finalPhone, 1);
+                                //FirebaseDatabase.getInstance().getReference("users")
+                                        //.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                                       // .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    //@Override
+                                    //public void onComplete(@NonNull Task<Void> task) {
+                                        //if (task.isSuccessful()) {
+                                           // Toast.makeText(register.this, "seller saved!", Toast.LENGTH_SHORT).show();
+                                       // }
+                                    //}
+                               // });
+                                //startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
+                                //return;
+                           // }
+                            user u = new user(mFullname.getText().toString().trim(), email, address, finalPhone);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -266,6 +270,7 @@ public class register extends AppCompatActivity implements LocationListener {
         latitude = location.getLatitude();
         longitude = location.getLongitude();
         findAddress();
+        return;
     }
 
     private void findAddress() {
@@ -279,6 +284,8 @@ public class register extends AppCompatActivity implements LocationListener {
             String state = addresses.get(0).getAdminArea();
             String country = addresses.get(0).getCountryName();
             maddress.setText(addres);
+            return;
+
         }catch (Exception e){
             Toast.makeText(this, ""+e.getMessage(), Toast.LENGTH_SHORT).show();
         }

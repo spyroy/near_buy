@@ -9,19 +9,20 @@ public class user {
     private String name;
     private String email;
     private String address;
-    private int Have_business,phone;
+    private int phone;
+    private  String type ;
     private List<ContactsContract.CommonDataKinds.Relation> items = new ArrayList<>();
 
     public user(){
     }
 
     //send data at register
-    public user(String name,String email,String address,int phone, int have_business){
+    public user(String name,String email,String address,int phone){
         this.name = name;
         this.email = email;
-        Have_business = 0;
         this.phone = phone;
         this.address = address;
+        this.type = "User";
 
     }
 
@@ -72,11 +73,4 @@ public class user {
         this.items = items;
     }
 
-    public int getHave_business() {
-        return Have_business;
-    }
-
-    public void setHave_business(int have_business) {
-        Have_business = have_business;
-    }
 }

@@ -1708,6 +1708,9 @@ drawable notification_tile_bg
 drawable notify_panel_notification_icon_bg
 drawable ovad_sabich
 drawable pasta
+drawable shape_rec01
+drawable shape_rec02
+drawable shepe_circle01
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -1733,6 +1736,7 @@ id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id Shop_name
 id TOP_END
 id TOP_START
 id accelerate
@@ -1819,7 +1823,6 @@ id beginning
 id blocking
 id bottom
 id bounce
-id business_checkbox
 id button
 id button2
 id button3
@@ -1842,7 +1845,6 @@ id chip2
 id chip3
 id chip_group
 id chronometer
-id city
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2005,7 +2007,6 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
-id number
 id off
 id on
 id outline
@@ -2032,6 +2033,7 @@ id radio
 id ratio
 id rectangles
 id register
+id register_seller
 id reverseSawtooth
 id right
 id right_icon
@@ -2088,7 +2090,6 @@ id standard
 id start
 id startHorizontal
 id startVertical
-id state
 id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
@@ -2239,6 +2240,7 @@ layout activity_items
 layout activity_login
 layout activity_main
 layout activity_register
+layout activity_register_seller
 layout activity_scrolling
 layout activity_single_store
 layout activity_stores
@@ -2720,6 +2722,7 @@ style MaterialAlertDialog_MaterialComponents_Title_Panel
 style MaterialAlertDialog_MaterialComponents_Title_Panel_CenterStacked
 style MaterialAlertDialog_MaterialComponents_Title_Text
 style MaterialAlertDialog_MaterialComponents_Title_Text_CenterStacked
+style NoActionBar
 style Platform_AppCompat
 style Platform_AppCompat_Light
 style Platform_MaterialComponents
