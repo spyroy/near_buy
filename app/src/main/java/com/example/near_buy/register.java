@@ -45,7 +45,7 @@ import java.util.concurrent.TimeUnit;
 
 
 public class register extends AppCompatActivity implements LocationListener {
-    EditText mFullname, mEmail, mPassword, mConfirm, mphone, maddress;
+    EditText mFullname, mEmail, mPassword, mConfirm, mphone, maddress, mcity;
     Button mRegisterbtn, button2,button3;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -81,6 +81,7 @@ public class register extends AppCompatActivity implements LocationListener {
         button2 = findViewById(R.id.already_have_account);
         button3 = findViewById(R.id.register_seller);
         gpsBtn = findViewById(R.id.gpsBt);
+        mcity = findViewById(R.id.cityCo);
 
         fAuth = FirebaseAuth.getInstance();
         database = FirebaseDatabase.getInstance();
@@ -202,7 +203,7 @@ public class register extends AppCompatActivity implements LocationListener {
                             //startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
                             //return;
                             // }
-                            user u = new user(mFullname.getText().toString().trim(), email, address, finalPhone);
+                            user u = new user(mFullname.getText().toString().trim(), email, address, finalPhone, mcity.getText().toString().trim());
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {

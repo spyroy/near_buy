@@ -1722,6 +1722,7 @@ drawable toys_are_mine
 font amarante
 font arbutus
 id ALT
+id Address
 id BOTTOM_END
 id BOTTOM_START
 id BottomNavigationView
@@ -1848,6 +1849,7 @@ id chip2
 id chip3
 id chip_group
 id chronometer
+id cityCo
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2001,6 +2003,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
 id my_nav
+id name
 id nameTv
 id nav_controller_view_tag
 id nav_host_fragment_container
@@ -2014,6 +2017,7 @@ id notification_main_column
 id notification_main_column_container
 id off
 id on
+id open
 id outline
 id packed
 id parallax
@@ -2037,6 +2041,7 @@ id progress_horizontal
 id radio
 id ratio
 id rectangles
+id recycle
 id register
 id register_seller
 id reverseSawtooth
@@ -2070,6 +2075,10 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id shopDetails
+id shopName
+id shop_im
+id shop_phone
 id shortcut
 id showCustom
 id showHome
@@ -2319,6 +2328,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout row_shop
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material

@@ -12,6 +12,9 @@ public class Manager {
     private String store_address;
     private  int  phone, store_phone;
     private  String type ="seller";
+
+    private String IsOpen;
+    private  String Store_city;
     private List<ContactsContract.CommonDataKinds.Relation> products = new ArrayList<>();
 
 
@@ -19,18 +22,20 @@ public class Manager {
     }
 
     //send data at register
-    public Manager(String name,String store,String email,String address,int phone,String type){
-        this.name = name;
-        this.store_name=store;
+    public Manager(String email, String IsOpen, String name, int phone,String store,String address, String Store_city,int store_phone, String type){
         this.email = email;
-        this.store_address = address;
+        this.IsOpen = IsOpen;
+        this.name = name;
         this.phone = phone;
+        this.store_name=store;
+        this.store_address = address;
+        this.Store_city = Store_city;
+        this.store_phone = store_phone;
         this.type = type;
-
     }
 
     //retrieve info from database
-    public Manager(String name, String email, String store, List<ContactsContract.CommonDataKinds.Relation> products, String store_address, int store_phone){
+    public Manager(String email, String IsOpen,  String name, int store_phone, String store, List<ContactsContract.CommonDataKinds.Relation> products, String store_address){
         this.name = name;
         this.email = email;
         this.store_name = store;
@@ -99,5 +104,21 @@ public class Manager {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getIsOpen() {
+        return IsOpen;
+    }
+
+    public void setIsOpen(String isOpen) {
+        IsOpen = isOpen;
+    }
+
+    public String getStore_city() {
+        return Store_city;
+    }
+
+    public void setStore_city(String store_city) {
+        Store_city = store_city;
     }
 }

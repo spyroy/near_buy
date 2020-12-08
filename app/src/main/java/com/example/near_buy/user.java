@@ -9,6 +9,7 @@ public class user {
     private String name;
     private String email;
     private String address;
+    private String city;
     private int phone;
     private  String type ="user";
     private List<ContactsContract.CommonDataKinds.Relation> items = new ArrayList<>();
@@ -17,13 +18,13 @@ public class user {
     }
 
     //send data at register
-    public user(String name,String email,String address,int phone){
+    public user(String name,String email,String address,int phone, String city){
         this.name = name;
         this.email = email;
         this.phone = phone;
         this.address = address;
         this.type = "User";
-
+        this.city = city;
     }
 
     //retrieve info from database
@@ -71,6 +72,22 @@ public class user {
 
     public void setItems(List<ContactsContract.CommonDataKinds.Relation> items) {
         this.items = items;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
 }

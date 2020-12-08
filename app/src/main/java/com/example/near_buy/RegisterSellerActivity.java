@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 
 public class RegisterSellerActivity extends AppCompatActivity implements LocationListener {
 
-    EditText mFullname,mShopname, mEmail, mPassword, mConfirm, mphone, maddress;
+    EditText mFullname,mShopname, mEmail, mPassword, mConfirm, mphone, maddress , mcity;
     Button mRegisterbtn;
     TextView mLoginBtn;
     FirebaseAuth fAuth;
@@ -74,6 +74,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
         database = FirebaseDatabase.getInstance();
         mDatabase = database.getReference(USER);
         progressBar = findViewById(R.id.progressBar);
+        mcity = findViewById(R.id.cityCo);
 
         gpsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,7 +187,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                             //startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
                             //return;
                             // }
-                            Manager m = new Manager(mFullname.getText().toString().trim(),mShopname.getText().toString().trim(), email, address, finalPhone,type);
+                            Manager m = new Manager(email,"true",  mFullname.getText().toString().trim(),finalPhone,mShopname.getText().toString().trim(),address, mcity.getText().toString().trim(), finalPhone,type);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
