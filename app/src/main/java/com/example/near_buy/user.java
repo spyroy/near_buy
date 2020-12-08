@@ -10,7 +10,7 @@ public class user {
     private String email;
     private String address;
     private int phone;
-    private  String type ;
+    private  String type ="user";
     private List<ContactsContract.CommonDataKinds.Relation> items = new ArrayList<>();
 
     public user(){

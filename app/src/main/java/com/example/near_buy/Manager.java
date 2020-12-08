@@ -11,20 +11,21 @@ public class Manager {
     private String store_name;
     private String store_address;
     private  int  phone, store_phone;
+    private  String type ="seller";
     private List<ContactsContract.CommonDataKinds.Relation> products = new ArrayList<>();
-    private  String type ;
+
 
     public Manager(){
     }
 
     //send data at register
-    public Manager(String name,String store,String email,String address,int phone){
+    public Manager(String name,String store,String email,String address,int phone,String type){
         this.name = name;
         this.store_name=store;
         this.email = email;
         this.store_address = address;
         this.phone = phone;
-        this.type = "Seller";
+        this.type = type;
 
     }
 
@@ -90,5 +91,13 @@ public class Manager {
 
     public void setStore_phone(int store_phone) {
         this.store_phone = store_phone;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

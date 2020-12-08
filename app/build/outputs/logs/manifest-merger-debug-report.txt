@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
 MERGED from [androidx.multidex:multidex:2.0.0] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\d907fd0758a05eb495443d4f1e05cd9a\multidex-2.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui:2.3.1] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\831f18a0102f1584510929668c29306b\navigation-ui-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\0829b3e930f6e3af478ccf44c8cc36fa\material-1.2.1\AndroidManifest.xml:17:1-24:12
@@ -76,20 +76,20 @@ MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\ahmad\.gradle\ca
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\86723420d28af30ba5283a8ea44c4773\documentfile-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\f7b4c14e17ef6ba0e102d9abb4ebb4d8\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\65286594e4901aa1ee46032f07babf5c\jetified-annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
-INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
+INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
+INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
 	package
 		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:3:5-35
 		INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
 		INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-84:12
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:1-86:12
 		INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:2:11-69
@@ -124,7 +124,7 @@ MERGED from [com.google.android.gms:play-services-measurement-sdk-api:18.0.0] C:
 	android:name
 		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:9:9-51
 application
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:11:5-82:19
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:11:5-84:19
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\0829b3e930f6e3af478ccf44c8cc36fa\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.2.1] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\0829b3e930f6e3af478ccf44c8cc36fa\material-1.2.1\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] C:\Users\ahmad\.gradle\caches\transforms-2\files-2.1\d3ff08c7c884e5983225361be12dc8cd\constraintlayout-2.0.4\AndroidManifest.xml:9:5-20
@@ -185,94 +185,102 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] C:\Users\ah
 		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:12:9-35
 	android:theme
 		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:17:9-45
+activity#com.example.near_buy.MainUserActivity
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:18:9-63
+	android:name
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:18:19-51
+activity#com.example.near_buy.MainSellerActivity
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:19:9-56
+	android:name
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:19:19-53
 activity#com.example.near_buy.RegisterSellerActivity
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:18:9-69
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:20:9-60
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:18:19-57
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:20:19-57
 activity#com.example.near_buy.single_store
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:19:9-22:52
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:21:9-24:52
 	android:parentActivityName
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:22:13-49
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:24:13-49
 	android:label
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:21:13-36
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:23:13-36
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:20:13-41
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:22:13-41
 activity#com.example.near_buy.items
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:23:9-30:20
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:25:9-32:20
 	android:parentActivityName
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:26:13-55
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:28:13-55
 	android:label
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:25:13-43
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:27:13-43
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:24:13-34
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:26:13-34
 meta-data#android.support.PARENT_ACTIVITY
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:27:13-29:69
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:29:13-31:69
 	android:value
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:29:17-66
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:31:17-66
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:28:17-63
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:30:17-63
 activity#com.example.near_buy.stores
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:31:9-38:20
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:33:9-40:20
 	android:parentActivityName
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:34:13-55
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:36:13-55
 	android:label
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:33:13-44
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:35:13-44
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:32:13-35
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:34:13-35
 activity#com.example.near_buy.ScrollingActivity
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:39:9-42:64
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:41:9-44:64
 	android:label
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:41:13-61
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:43:13-61
 	android:theme
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:42:13-61
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:44:13-61
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:40:13-46
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:42:13-46
 activity#com.example.near_buy.MainActivity
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:43:9-49:20
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:45:9-51:20
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:43:19-47
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:45:19-47
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:44:13-48:29
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:46:13-50:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:45:17-69
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:47:17-69
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:45:25-66
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:47:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:47:17-77
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:47:27-74
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:49:27-74
 activity#com.example.near_buy.login
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:50:9-57:20
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:52:9-59:20
 	android:parentActivityName
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:53:13-51
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:55:13-51
 	android:label
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:52:13-43
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:54:13-43
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:51:13-34
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:53:13-34
 activity#com.example.near_buy.Seller_main_activity
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:58:9-65:20
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:60:9-67:20
 	android:parentActivityName
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:61:13-55
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:63:13-55
 	android:label
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:60:13-49
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:62:13-49
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:59:13-49
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:61:13-49
 activity#com.example.near_buy.add_shop
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:66:9-73:20
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:68:9-75:20
 	android:parentActivityName
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:69:13-63
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:71:13-63
 	android:label
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:68:13-37
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:70:13-37
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:67:13-37
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:69:13-37
 activity#com.example.near_buy.register
-ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:74:9-77:54
+ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:76:9-79:54
 	android:parentActivityName
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:77:13-51
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:79:13-51
 	android:label
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:76:13-46
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:78:13-46
 	android:name
-		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:75:13-37
+		ADDED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml:77:13-37
 uses-sdk
 INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\ahmad\AndroidStudioProjects\near_buy\app\src\main\AndroidManifest.xml

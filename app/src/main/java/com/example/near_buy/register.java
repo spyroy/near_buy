@@ -213,7 +213,8 @@ public class register extends AppCompatActivity implements LocationListener {
                                     }
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainUserActivity.class));
+                            finish();
                         } else {
                             Toast.makeText(register.this, " ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             try {

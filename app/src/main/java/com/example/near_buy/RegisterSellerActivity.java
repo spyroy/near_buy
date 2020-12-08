@@ -129,6 +129,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                 String confirm = mConfirm.getText().toString().trim();
                 String address = maddress.getText().toString().trim();
                 int phone = 0;
+                String type="seller";
                 String mmm = mphone.getText().toString();
 
                 if(mphone.getText().toString() != null && mphone.getText().toString().length() > 0){
@@ -185,7 +186,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                             //startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
                             //return;
                             // }
-                            Manager m = new Manager(mFullname.getText().toString().trim(),mShopname.getText().toString().trim(), email, address, finalPhone);
+                            Manager m = new Manager(mFullname.getText().toString().trim(),mShopname.getText().toString().trim(), email, address, finalPhone,type);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -196,7 +197,8 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                                     }
                                 }
                             });
-                            startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                            startActivity(new Intent(getApplicationContext(), MainSellerActivity.class));
+                            finish();
                         } else {
                             Toast.makeText(RegisterSellerActivity.this, " ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                             try {
