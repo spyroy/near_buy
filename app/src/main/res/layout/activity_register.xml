@@ -18,18 +18,6 @@
         app:layout_constraintTop_toBottomOf="@+id/log_in_title">
 
         <Button
-            android:id="@+id/register_seller"
-            android:layout_width="370dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:text="Are you a seller? click"
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#039BE5" />
-        <Button
             android:id="@+id/already_have_account"
             android:layout_width="381dp"
             android:layout_height="43dp"
@@ -38,10 +26,23 @@
             android:layout_marginTop="1dp"
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
-            android:text="@string/already_have_account"
             android:onClick="launchLoginActivity"
+            android:text="@string/already_have_account"
             android:textColor="#FFFFFF"
             app:backgroundTint="#039BE5" />
+
+        <Button
+            android:id="@+id/register_seller"
+            android:layout_width="381dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="Are you a seller? click"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#00897B" />
 
         <EditText
             android:id="@+id/full_name"
@@ -57,7 +58,7 @@
             android:drawableLeft="@drawable/ic_baseline_person"
             android:drawablePadding="5dp"
             android:ems="10"
-            android:hint="Full Name / Shope Name"
+            android:hint="Full Name"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:textColor="@color/black"
@@ -142,7 +143,7 @@
             android:drawableLeft="@drawable/ic_baseline_phone_iphone_24"
             android:drawablePadding="5dp"
             android:ems="10"
-            android:hint="phone"
+            android:hint="Phone Number"
             android:inputType="numberDecimal"
             android:padding="10dp"
             android:textColor="@color/black"
@@ -183,7 +184,7 @@
                 android:drawableLeft="@drawable/ic_baseline_location"
                 android:drawablePadding="1dp"
                 android:ems="10"
-                android:hint="city"
+                android:hint="City"
                 android:inputType="textPostalAddress"
                 android:padding="10dp"
                 android:textColor="@color/black"
@@ -205,7 +206,7 @@
                 android:drawableLeft="@drawable/ic_baseline_location"
                 android:drawablePadding="1dp"
                 android:ems="10"
-                android:hint="state"
+                android:hint="State"
                 android:inputType="textPostalAddress"
                 android:padding="10dp"
                 android:textColor="@color/black"
@@ -227,7 +228,7 @@
                 android:drawableLeft="@drawable/ic_baseline_location"
                 android:drawablePadding="1dp"
                 android:ems="10"
-                android:hint="number"
+                android:hint="Num"
                 android:inputType="textPostalAddress"
                 android:padding="10dp"
                 android:textColor="@color/black"
@@ -249,26 +250,12 @@
             android:drawableLeft="@drawable/ic_baseline_location"
             android:drawablePadding="5dp"
             android:ems="10"
-            android:hint="complete address"
+            android:hint="Complete Address"
             android:inputType="textPostalAddress|textImeMultiLine"
             android:padding="10dp"
             android:textColor="@color/black"
             android:textColorHint="@color/black"
             android:textSize="15sp" />
-
-        <CheckBox
-            android:id="@+id/business_checkbox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:background="@color/white"
-            android:padding="10dp"
-            android:text="I have a business!"
-            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/Register_button"

@@ -8,12 +8,12 @@
         "source": "C:\\Users\\benny\\AndroidStudioProjects\\near_buylts\\app\\build\\generated\\res\\pngs\\debug\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "C:\\Users\\benny\\AndroidStudioProjects\\near_buylts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_user_24.png.flat",
-        "source": "C:\\Users\\benny\\AndroidStudioProjects\\near_buylts\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_user_24.png"
-    },
-    {
         "merged": "C:\\Users\\benny\\AndroidStudioProjects\\near_buylts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi_ic_baseline_storefront_24.png.flat",
         "source": "C:\\Users\\benny\\AndroidStudioProjects\\near_buylts\\app\\build\\generated\\res\\pngs\\debug\\drawable-mdpi\\ic_baseline_storefront_24.png"
+    },
+    {
+        "merged": "C:\\Users\\benny\\AndroidStudioProjects\\near_buylts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi_ic_baseline_user_24.png.flat",
+        "source": "C:\\Users\\benny\\AndroidStudioProjects\\near_buylts\\app\\build\\generated\\res\\pngs\\debug\\drawable-hdpi\\ic_baseline_user_24.png"
     },
     {
         "merged": "C:\\Users\\benny\\AndroidStudioProjects\\near_buylts\\app\\build\\intermediates\\res\\merged\\debug\\drawable-anydpi-v21_ic_search_black_24dp.xml.flat",

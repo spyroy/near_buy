@@ -79,12 +79,12 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
             @Override
             public void onClick(View v) {
                 // detect current location
-                if (checklocationPerission()) {
+                if (checklocationPermission()) {
                     //already allowed
                     detectLocation();
                 } else {
                     // not allowed , request
-                    requestlocationPrmission();
+                    requestlocationPermission();
                 }
             }
         });
@@ -224,7 +224,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
 
 
     private void detectLocation() {
-        Toast.makeText(this, "Please waite ... ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Detecting your location", Toast.LENGTH_SHORT).show();
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -241,12 +241,12 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
 
     }
 
-    private boolean checklocationPerission(){
+    private boolean checklocationPermission(){
         boolean result = ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) ==
                 (PackageManager.PERMISSION_GRANTED);
         return  result;
     }
-    private void requestlocationPrmission(){
+    private void requestlocationPermission(){
         ActivityCompat.requestPermissions(this,locationPermissoin,LOCATION_REQUEST_CODE);
     }
 
