@@ -1655,12 +1655,15 @@ drawable eggs
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable groceriesa
+drawable ic_baseline_email_24
 drawable ic_baseline_gps
 drawable ic_baseline_home_24
 drawable ic_baseline_location
+drawable ic_baseline_login_24
 drawable ic_baseline_person
 drawable ic_baseline_phone_iphone_24
 drawable ic_baseline_search_24
+drawable ic_baseline_security_24
 drawable ic_baseline_store_24
 drawable ic_baseline_storefront_24
 drawable ic_baseline_user_24
@@ -1668,6 +1671,7 @@ drawable ic_email
 drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable ic_lock_black
+drawable ic_logut
 drawable ic_mail_whit
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
@@ -1728,7 +1732,6 @@ id Email
 id FUNCTION
 id Login_button
 id META
-id MainFrag
 id NO_DEBUG
 id Register_button
 id SHIFT
@@ -1823,6 +1826,7 @@ id beginning
 id blocking
 id bottom
 id bounce
+id business_checkbox
 id button
 id button2
 id button3
@@ -1845,6 +1849,7 @@ id chip2
 id chip3
 id chip_group
 id chronometer
+id city
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -1958,6 +1963,7 @@ id list_item
 id log_in
 id log_in_title
 id logout
+id logutBtn
 id mainImageView
 id masked
 id media_actions
@@ -1997,6 +2003,7 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
 id my_nav
+id nameTv
 id nav_controller_view_tag
 id nav_host_fragment_container
 id navigation_header_container
@@ -2007,6 +2014,7 @@ id normal
 id notification_background
 id notification_main_column
 id notification_main_column_container
+id number
 id off
 id on
 id outline
@@ -2090,6 +2098,7 @@ id standard
 id start
 id startHorizontal
 id startVertical
+id state
 id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
@@ -2130,6 +2139,7 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textView6
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2239,6 +2249,8 @@ layout abc_tooltip
 layout activity_items
 layout activity_login
 layout activity_main
+layout activity_main_seller
+layout activity_main_user
 layout activity_register
 layout activity_register_seller
 layout activity_scrolling
@@ -2334,6 +2346,7 @@ menu bottom_menu
 menu main_menu
 menu menu_scrolling
 mipmap ic_launcher
+mipmap ic_launcher_foreground
 mipmap ic_launcher_round
 navigation my_nav
 plurals mtrl_badge_content_description

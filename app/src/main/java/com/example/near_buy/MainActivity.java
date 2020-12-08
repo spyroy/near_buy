@@ -40,15 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void logout(View view){
-        fAuth = FirebaseAuth.getInstance();
-        if(fAuth.getCurrentUser() == null){
-            Toast.makeText(MainActivity.this,"you are not logged in",Toast.LENGTH_SHORT).show();
-            return;
-        }
-        FirebaseAuth.getInstance().signOut();
-        Toast.makeText(MainActivity.this,"logged out successfully",Toast.LENGTH_SHORT).show();
-    }
+
 
     public void launchStoresActivity(View view) {
         Intent intent = new Intent(this, stores.class);
@@ -79,12 +71,24 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void switch_user(View view) {
+    public void logout(View view){
         fAuth = FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser() == null){
+            Toast.makeText(MainActivity.this,"you are not logged in",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(MainActivity.this,"logged out successfully",Toast.LENGTH_SHORT).show();
+    }
+
+    public void switch_user(View view) {
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() == null)
+        {
             Toast.makeText(MainActivity.this,"You are not logged in",Toast.LENGTH_SHORT).show();
             return;
         }
+
         FirebaseAuth.getInstance().signOut();
         Toast.makeText(MainActivity.this,"change user",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, login.class);

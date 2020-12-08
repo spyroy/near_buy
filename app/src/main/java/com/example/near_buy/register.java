@@ -104,32 +104,32 @@ public class register extends AppCompatActivity implements LocationListener {
         locationPermissoin = new String[]{Manifest.permission.ACCESS_FINE_LOCATION};
 
         //Cbox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-           // @Override
-           // public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-              //  if(isChecked) {
-                 //   AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
-                   // builder.setCancelable(true);
-                   //builder.setTitle("Are you sure you have a business?");
-                    //builder.setMessage("Marking this will take you to seller menu");
-                   // builder.setPositiveButton("Confirm",
-                          // new DialogInterface.OnClickListener() {
-                               // @Override
-                               // public void onClick(DialogInterface dialog, int id) {
-                                   // Cbox.setChecked(true);
-                                //}
-                            //});
-                    //builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-                       // @Override
-                       // public void onClick(DialogInterface dialog, int id) {
-                          //  Cbox.setChecked(false);
-                       //}
-                  // });
+        // @Override
+        // public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        //  if(isChecked) {
+        //   AlertDialog.Builder builder = new AlertDialog.Builder(register.this);
+        // builder.setCancelable(true);
+        //builder.setTitle("Are you sure you have a business?");
+        //builder.setMessage("Marking this will take you to seller menu");
+        // builder.setPositiveButton("Confirm",
+        // new DialogInterface.OnClickListener() {
+        // @Override
+        // public void onClick(DialogInterface dialog, int id) {
+        // Cbox.setChecked(true);
+        //}
+        //});
+        //builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+        // @Override
+        // public void onClick(DialogInterface dialog, int id) {
+        //  Cbox.setChecked(false);
+        //}
+        // });
 
-                  //  AlertDialog dialog = builder.create();
-                   // dialog.show();
-               // }
-            //}
-       // });
+        //  AlertDialog dialog = builder.create();
+        // dialog.show();
+        // }
+        //}
+        // });
 
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -184,24 +184,24 @@ public class register extends AppCompatActivity implements LocationListener {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                           // Toast.makeText(register.this, "User created", Toast.LENGTH_SHORT).show();
-                          // FirebaseUser user = fAuth.getCurrentUser();
+                            // Toast.makeText(register.this, "User created", Toast.LENGTH_SHORT).show();
+                            // FirebaseUser user = fAuth.getCurrentUser();
                             //if (Cbox.isChecked()) {
-                                //start manager register activity
-                                //Manager m = new Manager(mFullname.getText().toString().trim(), email, address, finalPhone, 1);
-                                //FirebaseDatabase.getInstance().getReference("users")
-                                        //.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                       // .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
-                                    //@Override
-                                    //public void onComplete(@NonNull Task<Void> task) {
-                                        //if (task.isSuccessful()) {
-                                           // Toast.makeText(register.this, "seller saved!", Toast.LENGTH_SHORT).show();
-                                       // }
-                                    //}
-                               // });
-                                //startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
-                                //return;
-                           // }
+                            //start manager register activity
+                            //Manager m = new Manager(mFullname.getText().toString().trim(), email, address, finalPhone, 1);
+                            //FirebaseDatabase.getInstance().getReference("users")
+                            //.child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                            // .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            //@Override
+                            //public void onComplete(@NonNull Task<Void> task) {
+                            //if (task.isSuccessful()) {
+                            // Toast.makeText(register.this, "seller saved!", Toast.LENGTH_SHORT).show();
+                            // }
+                            //}
+                            // });
+                            //startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
+                            //return;
+                            // }
                             user u = new user(mFullname.getText().toString().trim(), email, address, finalPhone);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
@@ -313,18 +313,18 @@ public class register extends AppCompatActivity implements LocationListener {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         switch (requestCode){
             case LOCATION_REQUEST_CODE:
-            if(grantResults.length>0){
-                boolean locationaccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
-                if(locationaccepted)
-                {
-                    // permission allowed
-                    detectLocation();
+                if(grantResults.length>0){
+                    boolean locationaccepted = grantResults[0] == PackageManager.PERMISSION_GRANTED;
+                    if(locationaccepted)
+                    {
+                        // permission allowed
+                        detectLocation();
+                    }
+                    else{
+                        // permission denied
+                        Toast.makeText(this, "Location permission is necessary", Toast.LENGTH_SHORT).show();
+                    }
                 }
-                else{
-                    // permission denied
-                    Toast.makeText(this, "Location permission is necessary", Toast.LENGTH_SHORT).show();
-                }
-            }
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
     }
@@ -332,4 +332,3 @@ public class register extends AppCompatActivity implements LocationListener {
 
 
 }
-

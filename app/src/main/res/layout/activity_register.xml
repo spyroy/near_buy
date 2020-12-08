@@ -8,28 +8,14 @@
     tools:context=".register">
 
     <LinearLayout
-        android:layout_width="408dp"
-        android:layout_height="552dp"
+        android:layout_width="409dp"
+        android:layout_height="554dp"
         android:layout_marginTop="24dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/log_in_title">
-
-        <Button
-            android:id="@+id/already_have_account"
-            android:layout_width="370dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:onClick="launchLoginActivity"
-            android:text="@string/already_have_account"
-            android:textColor="#FFFFFF"
-            app:backgroundTint="#039BE5" />
 
         <Button
             android:id="@+id/register_seller"
@@ -41,6 +27,19 @@
             android:layout_marginEnd="16dp"
             android:layout_marginRight="16dp"
             android:text="Are you a seller? click"
+            android:textColor="#FFFFFF"
+            app:backgroundTint="#039BE5" />
+        <Button
+            android:id="@+id/already_have_account"
+            android:layout_width="381dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="@string/already_have_account"
+            android:onClick="launchLoginActivity"
             android:textColor="#FFFFFF"
             app:backgroundTint="#039BE5" />
 
@@ -58,7 +57,7 @@
             android:drawableLeft="@drawable/ic_baseline_person"
             android:drawablePadding="5dp"
             android:ems="10"
-            android:hint="Full Name "
+            android:hint="Full Name / Shope Name"
             android:inputType="textPersonName"
             android:padding="10dp"
             android:textColor="@color/black"
@@ -170,29 +169,106 @@
                 android:src="@drawable/ic_baseline_gps" />
 
             <EditText
-                android:id="@+id/addressCo"
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="5dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="18dp"
+                android:layout_marginEnd="16dp"
                 android:layout_marginRight="16dp"
+                android:layout_weight="1"
                 android:background="@color/white"
                 android:drawableStart="@drawable/ic_baseline_location"
                 android:drawableLeft="@drawable/ic_baseline_location"
-                android:drawablePadding="5dp"
+                android:drawablePadding="1dp"
                 android:ems="10"
-                android:hint="complete address"
-                android:inputType="textPostalAddress|textImeMultiLine"
+                android:hint="city"
+                android:inputType="textPostalAddress"
                 android:padding="10dp"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
                 android:textSize="15sp" />
 
+            <EditText
+                android:id="@+id/state"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_baseline_location"
+                android:drawableLeft="@drawable/ic_baseline_location"
+                android:drawablePadding="1dp"
+                android:ems="10"
+                android:hint="state"
+                android:inputType="textPostalAddress"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp" />
 
+            <EditText
+                android:id="@+id/number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@color/white"
+                android:drawableStart="@drawable/ic_baseline_location"
+                android:drawableLeft="@drawable/ic_baseline_location"
+                android:drawablePadding="1dp"
+                android:ems="10"
+                android:hint="number"
+                android:inputType="textPostalAddress"
+                android:padding="10dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="15sp" />
         </LinearLayout>
 
+        <EditText
+            android:id="@+id/addressCo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/white"
+            android:drawableStart="@drawable/ic_baseline_location"
+            android:drawableLeft="@drawable/ic_baseline_location"
+            android:drawablePadding="5dp"
+            android:ems="10"
+            android:hint="complete address"
+            android:inputType="textPostalAddress|textImeMultiLine"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="15sp" />
+
+        <CheckBox
+            android:id="@+id/business_checkbox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:text="I have a business!"
+            android:textColor="@color/black" />
 
         <Button
             android:id="@+id/Register_button"
@@ -227,25 +303,24 @@
         android:fontFamily="@font/arbutus"
         android:text="Near-Buy"
         android:textColor="#E1CB07"
-        android:textSize="20sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.02" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <TextView
         android:id="@+id/log_in_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/amarante"
         android:text="Let's create your account!"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
