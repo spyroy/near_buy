@@ -187,7 +187,8 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                             //startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
                             //return;
                             // }
-                            Manager m = new Manager(email,"true",  mFullname.getText().toString().trim(),finalPhone,mShopname.getText().toString().trim(),address, mcity.getText().toString().trim(), finalPhone,type);
+                            String uid = fAuth.getUid();
+                            Manager m = new Manager(uid,email,"true",  mFullname.getText().toString().trim(),finalPhone,mShopname.getText().toString().trim(),address, mcity.getText().toString().trim(), finalPhone,type);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {

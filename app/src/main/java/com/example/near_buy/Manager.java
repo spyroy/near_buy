@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Manager {
     private  String name;
+    private  String uid;
     private String email;
     private String store_name;
     private String store_address;
@@ -22,7 +23,8 @@ public class Manager {
     }
 
     //send data at register
-    public Manager(String email, String IsOpen, String name, int phone,String store,String address, String Store_city,int store_phone, String type){
+    public Manager(String uid,String email, String IsOpen, String name, int phone,String store,String address, String Store_city,int store_phone, String type){
+        this.uid=uid;
         this.email = email;
         this.IsOpen = IsOpen;
         this.name = name;
@@ -35,7 +37,8 @@ public class Manager {
     }
 
     //retrieve info from database
-    public Manager(String email, String IsOpen,  String name, int store_phone, String store, List<ContactsContract.CommonDataKinds.Relation> products, String store_address){
+    public Manager(String uid,String email, String IsOpen,  String name, int store_phone, String store, List<ContactsContract.CommonDataKinds.Relation> products, String store_address){
+        this.uid=uid;
         this.name = name;
         this.email = email;
         this.store_name = store;
@@ -120,5 +123,13 @@ public class Manager {
 
     public void setStore_city(String store_city) {
         Store_city = store_city;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 }

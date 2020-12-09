@@ -32,6 +32,30 @@
             android:layout_alignParentRight="true"
             android:background="@null"/>
 
+        <ImageButton
+            android:id="@+id/editProfileBtn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_edit"
+            android:layout_toStartOf="@+id/logutBtn"
+            android:background="@null"
+            android:layout_toLeftOf="@+id/logutBtn" />
+
+
+        <ImageButton
+            android:id="@+id/addProductBtn"
+            android:layout_width="41dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/editProfileBtn"
+            android:layout_alignLeft="@+id/editProfileBtn"
+            android:layout_marginStart="-48dp"
+            android:layout_marginLeft="-48dp"
+            android:layout_marginRight="5dp"
+            android:background="@null"
+            android:src="@drawable/ic_add_prodact_whit" />
+
+
+
     </RelativeLayout>
 
 

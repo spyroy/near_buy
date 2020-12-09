@@ -28,6 +28,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.Nearbuy" >
+        <activity android:name="com.example.near_buy.AddProductActivity" />
+        <activity android:name="com.example.near_buy.shopDetailsActivity" />
         <activity android:name="com.example.near_buy.MainUserActivity" />
         <activity android:name="com.example.near_buy.MainSellerActivity" />
         <activity android:name="com.example.near_buy.RegisterSellerActivity" />

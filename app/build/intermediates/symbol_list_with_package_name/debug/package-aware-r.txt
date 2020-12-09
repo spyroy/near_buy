@@ -1655,11 +1655,18 @@ drawable eggs
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable groceriesa
+drawable ic_add_prodact_primary
+drawable ic_add_prodact_whit
+drawable ic_baseline_arrow_back_white
 drawable ic_baseline_email_24
+drawable ic_baseline_fastfood_black
+drawable ic_baseline_filter_list_black
 drawable ic_baseline_gps
 drawable ic_baseline_home_24
+drawable ic_baseline_local_phone_white
 drawable ic_baseline_location
 drawable ic_baseline_login_24
+drawable ic_baseline_map_white
 drawable ic_baseline_person
 drawable ic_baseline_phone_iphone_24
 drawable ic_baseline_search_24
@@ -1667,6 +1674,7 @@ drawable ic_baseline_security_24
 drawable ic_baseline_store_24
 drawable ic_baseline_storefront_24
 drawable ic_baseline_user_24
+drawable ic_edit
 drawable ic_email
 drawable ic_launcher_background
 drawable ic_launcher_foreground
@@ -1799,6 +1807,7 @@ id action_text
 id actions
 id activity_chooser_view_content
 id add
+id addProductBtn
 id addShop
 id address
 id addressCo
@@ -1820,6 +1829,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id backBtn
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1834,6 +1844,7 @@ id button4
 id button5
 id buttonPanel
 id cache_measures
+id callBtn
 id cancel_action
 id cancel_button
 id center
@@ -1894,6 +1905,7 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editProfileBtn
 id edit_query
 id end
 id end_padder
@@ -1908,6 +1920,8 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filterBtn
+id filterProducts
 id fitToContents
 id fixed
 id flip
@@ -1944,6 +1958,7 @@ id imageButton25
 id imageButton26
 id imageButton27
 id imageView
+id imageView3
 id info
 id invisible
 id italic
@@ -1965,6 +1980,7 @@ id log_in_title
 id logout
 id logutBtn
 id mainImageView
+id mapBtn
 id masked
 id media_actions
 id menu_help
@@ -2018,6 +2034,7 @@ id notification_main_column_container
 id off
 id on
 id open
+id openSingle
 id outline
 id packed
 id parallax
@@ -2035,6 +2052,11 @@ id phone
 id pin
 id position
 id postLayout
+id priceEt
+id productDescription
+id productName
+id productPrice
+id products
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -2062,6 +2084,7 @@ id scrollIndicatorUp
 id scrollView
 id scrollView2
 id scrollable
+id searcProduct
 id searchFrag
 id search_badge
 id search_bar
@@ -2075,13 +2098,20 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id shopAddressSingle
 id shopDetails
+id shopEmailSingle
 id shopName
+id shopNameSingle
+id shopPhoneSingle
+id shopRl
+id shopSingle
 id shop_im
 id shop_phone
 id shortcut
 id showCustom
 id showHome
+id showProducts
 id showTitle
 id sin
 id skipCollapsed
@@ -2107,6 +2137,7 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
+id stock
 id stop
 id storeCategory
 id storeFrag
@@ -2157,6 +2188,7 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
+id titleEt
 id title_template
 id title_text
 id toggle
@@ -2252,6 +2284,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_add_product
 layout activity_items
 layout activity_login
 layout activity_main
@@ -2260,6 +2293,7 @@ layout activity_main_user
 layout activity_register
 layout activity_register_seller
 layout activity_scrolling
+layout activity_shop_details
 layout activity_single_store
 layout activity_stores
 layout add_shop_layout
@@ -2328,6 +2362,7 @@ layout notification_template_media
 layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
+layout row_products
 layout row_shop
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
