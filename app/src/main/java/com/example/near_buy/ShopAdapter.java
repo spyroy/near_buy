@@ -1,6 +1,7 @@
 package com.example.near_buy;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,7 +52,17 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.HolderShop>{
             holder.isOpen.setText("shop is closed");
             holder.isOpen.setBackgroundColor(Color.RED);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, shopDetailsActivity.class);
+                intent.putExtra("shopName", shopName);
+                context.startActivity(intent);
+            }
+        });
     }
+
 
     @Override
     public int getItemCount() {
