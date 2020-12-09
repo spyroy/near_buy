@@ -203,7 +203,7 @@ public class register extends AppCompatActivity implements LocationListener {
                             //startActivity(new Intent(getApplicationContext(), Seller_main_activity.class));
                             //return;
                             // }
-                            user u = new user(mFullname.getText().toString().trim(), email, address, finalPhone, mcity.getText().toString().trim());
+                            user u = new user(mFullname.getText().toString().trim(), email, address, finalPhone, mcity.getText().toString().trim(), fAuth.getUid());
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(u).addOnCompleteListener(new OnCompleteListener<Void>() {

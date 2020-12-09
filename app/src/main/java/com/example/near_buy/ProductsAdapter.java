@@ -7,6 +7,8 @@ import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,27 +17,27 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.HolderShop>{
+public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.HolderProducts>{
     private Context context;
-    public ArrayList<Manager> shopList;
+    public ArrayList<Manager> productList;
 
-    public ProductsAdapter (Context context, ArrayList<Manager> shopList){
+    public ProductsAdapter (Context context, ArrayList<Manager> productList){
         this.context = context;
-        this.shopList = shopList;
+        this.productList = productList;
     }
 
     @NonNull
     @Override
-    public HolderShop onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.row_shop, parent, false);
-        return new HolderShop(view);
+    public HolderProducts onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(context).inflate(R.layout.row_products, parent, false);
+        return new HolderProducts(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull HolderShop holder, int position) {
-        Manager products = shopList.get(position);
+    public void onBindViewHolder(@NonNull HolderProducts holder, int position) {
+        Manager products = productList.get(position);
         List<ContactsContract.CommonDataKinds.Relation> prods = products.getProducts();
-//        String email = shop.getEmail();
+        //String price = products;
 //        String shopName = shop.getStore();
 //        String phone = String.valueOf(shop.getPhone());
 //        String open = shop.getIsOpen();
@@ -68,21 +70,25 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
 
     @Override
     public int getItemCount() {
-        return shopList.size();
+        return productList.size();
     }
 
-    class HolderShop extends RecyclerView.ViewHolder{
+    class HolderProducts extends RecyclerView.ViewHolder{
+        private ImageView addToCart;
         private TextView product_name;
         private TextView price;
         private TextView description;
         private TextView onStock;
+        private TextView discount;
 
-        public HolderShop(@NonNull View itemView) {
+        public HolderProducts(@NonNull View itemView) {
             super(itemView);
+            addToCart = itemView.findViewById(R.id.shop_im);
             product_name = (TextView)itemView.findViewById(R.id.productName);
             price = (TextView)itemView.findViewById(R.id.productPrice);
             description = (TextView)itemView.findViewById(R.id.productDescription);
             onStock = (TextView)itemView.findViewById(R.id.stock);
+            discount = (TextView)itemView.findViewById(R.id.Discount);
         }
     }
 }
