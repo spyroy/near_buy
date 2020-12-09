@@ -39,7 +39,14 @@
         <activity android:name="com.example.near_buy.AddProductActivity" />
         <activity android:name="com.example.near_buy.shopDetailsActivity" />
         <activity android:name="com.example.near_buy.MainUserActivity" />
-        <activity android:name="com.example.near_buy.MainSellerActivity" />
+        <activity
+            android:name="com.example.near_buy.MainSellerActivity"
+            android:label="main_seller_activity"
+            android:parentActivityName="com.example.near_buy.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.near_buy.MainActivity" />
+        </activity>
         <activity android:name="com.example.near_buy.RegisterSellerActivity" />
         <activity
             android:name="com.example.near_buy.single_store"

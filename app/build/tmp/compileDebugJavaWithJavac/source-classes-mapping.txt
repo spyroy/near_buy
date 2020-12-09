@@ -16,14 +16,14 @@ com/example/near_buy/shopDetailsActivity.java
  com.example.near_buy.shopDetailsActivity$1
  com.example.near_buy.shopDetailsActivity$2
  com.example.near_buy.shopDetailsActivity$3
-com/example/near_buy/MainActivity.java
- com.example.near_buy.MainActivity
-com/example/near_buy/login.java
- com.example.near_buy.login
- com.example.near_buy.login$1
- com.example.near_buy.login$1$1
- com.example.near_buy.login$2
- com.example.near_buy.login$2$1
+com/example/near_buy/MainSellerActivity.java
+ com.example.near_buy.MainSellerActivity
+ com.example.near_buy.MainSellerActivity$1
+ com.example.near_buy.MainSellerActivity$2
+com/example/near_buy/AddProductActivity.java
+ com.example.near_buy.AddProductActivity
+ com.example.near_buy.AddProductActivity$1
+ com.example.near_buy.AddProductActivity$2
 com/example/near_buy/shop.java
  com.example.near_buy.shop
 com/example/near_buy/homeFrag.java
@@ -84,11 +84,12 @@ com/example/near_buy/Seller_main_activity.java
  com.example.near_buy.Seller_main_activity
  com.example.near_buy.Seller_main_activity$1
  com.example.near_buy.Seller_main_activity$2
-com/example/near_buy/MainSellerActivity.java
- com.example.near_buy.MainSellerActivity
- com.example.near_buy.MainSellerActivity$1
- com.example.near_buy.MainSellerActivity$2
-com/example/near_buy/AddProductActivity.java
- com.example.near_buy.AddProductActivity
- com.example.near_buy.AddProductActivity$1
- com.example.near_buy.AddProductActivity$2
+com/example/near_buy/login.java
+ com.example.near_buy.login
+ com.example.near_buy.login$1
+ com.example.near_buy.login$1$1
+ com.example.near_buy.login$2
+ com.example.near_buy.login$2$1
+com/example/near_buy/MainActivity.java
+ com.example.near_buy.MainActivity
+ com.example.near_buy.MainActivity$1

@@ -25,7 +25,14 @@
         <activity android:name=".AddProductActivity"></activity>
         <activity android:name=".shopDetailsActivity" />
         <activity android:name=".MainUserActivity" />
-        <activity android:name=".MainSellerActivity" />
+        <activity
+            android:name=".MainSellerActivity"
+            android:label="main_seller_activity"
+            android:parentActivityName=".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.near_buy.MainActivity" />
+        </activity>
         <activity android:name=".RegisterSellerActivity" />
         <activity
             android:name=".single_store"

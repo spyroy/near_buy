@@ -116,11 +116,6 @@ public class login extends AppCompatActivity {
                         }
                         else{
                             Toast.makeText(login.this," ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            try {
-                                TimeUnit.SECONDS.sleep(4);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
                             progressBar.setVisibility(View.INVISIBLE);
                             //startActivity(new Intent(getApplicationContext(), login.class));
                         }

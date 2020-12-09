@@ -1,5 +1,6 @@
 package com.example.near_buy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -15,6 +16,11 @@ import android.widget.Toast;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -93,6 +99,37 @@ public class MainActivity extends AppCompatActivity {
         Toast.makeText(MainActivity.this,"change user",Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(this, login.class);
         startActivity(intent);
+    }
+
+    public void seller_details(View view) {
+        fAuth = FirebaseAuth.getInstance();
+        if(fAuth.getCurrentUser() == null)
+        {
+            Toast.makeText(MainActivity.this,"You are not logged in",Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String fa = fAuth.getUid();
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
+        ref.child(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String ds = snapshot.child("type").getValue().toString();
+                if(ds.equals("seller")){
+                    Toast.makeText(MainActivity.this,"start new activity seller",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(MainActivity.this, MainSellerActivity.class);
+                    startActivity(intent);
+                }
+                else{
+                    Toast.makeText(MainActivity.this,"You are not a seller",Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(MainActivity.this,"canceled",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 

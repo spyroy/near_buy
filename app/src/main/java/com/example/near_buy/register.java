@@ -70,6 +70,7 @@ public class register extends AppCompatActivity implements LocationListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+
         mFullname = findViewById(R.id.full_name);
         mEmail = findViewById(R.id.Email);
         mPassword = findViewById(R.id.pass);
@@ -218,11 +219,6 @@ public class register extends AppCompatActivity implements LocationListener {
                             finish();
                         } else {
                             Toast.makeText(register.this, " ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            try {
-                                TimeUnit.SECONDS.sleep(4);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
                             progressBar.setVisibility(View.INVISIBLE);
                             //startActivity(new Intent(getApplicationContext(),register.class));
                         }

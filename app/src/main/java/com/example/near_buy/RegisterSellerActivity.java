@@ -142,6 +142,16 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                 }
 
 
+                if (TextUtils.isEmpty(mFullname.getText().toString().trim())) {
+                    mFullname.setError("seller name is required.");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(mShopname.getText().toString().trim())) {
+                    mShopname.setError("shop name is required.");
+                    return;
+                }
+
                 if (TextUtils.isEmpty(email)) {
                     mEmail.setError("Email is required.");
                     return;
@@ -149,6 +159,21 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
 
                 if (TextUtils.isEmpty(password)) {
                     mPassword.setError("Password is required.");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(mphone.getText().toString().trim())) {
+                    mphone.setError("phone is required.");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(maddress.getText().toString().trim())) {
+                    maddress.setError("address is required.");
+                    return;
+                }
+
+                if (TextUtils.isEmpty(mcity.getText().toString().trim())) {
+                    mcity.setError("city is required.");
                     return;
                 }
 
@@ -203,11 +228,6 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                             finish();
                         } else {
                             Toast.makeText(RegisterSellerActivity.this, " ERROR!" + task.getException().getMessage(), Toast.LENGTH_LONG).show();
-                            try {
-                                TimeUnit.SECONDS.sleep(4);
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
                             progressBar.setVisibility(View.INVISIBLE);
                             //startActivity(new Intent(getApplicationContext(),register.class));
                         }

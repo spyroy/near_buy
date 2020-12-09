@@ -2104,6 +2104,7 @@ id search_src_text
 id search_voice_btn
 id select_dialog_listview
 id selected
+id seller_details
 id shopAddressSingle
 id shopDetails
 id shopEmailSingle
