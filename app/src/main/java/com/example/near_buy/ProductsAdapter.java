@@ -59,14 +59,17 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
             holder.onStock.setBackgroundColor(Color.RED);
         }
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context, shopDetailsActivity.class);
-                intent.putExtra("shopName", "productName");
-                context.startActivity(intent);
-            }
-        });
+        //TODO
+        //add product to cart
+
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(context, shopDetailsActivity.class);
+//                intent.putExtra("shopName", "productName");
+//                context.startActivity(intent);
+//            }
+//        });
     }
 
 
@@ -93,7 +96,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
 
         public HolderProducts(@NonNull View itemView) {
             super(itemView);
-            addToCart = itemView.findViewById(R.id.shop_im);
+            addToCart = (ImageView)itemView.findViewById(R.id.shop_im);
             product_name = (TextView)itemView.findViewById(R.id.productName);
             price = (TextView)itemView.findViewById(R.id.productPrice);
             description = (TextView)itemView.findViewById(R.id.productDescription);
