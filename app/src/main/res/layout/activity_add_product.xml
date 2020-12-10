@@ -61,13 +61,24 @@
         android:layout_marginRight="100dp"
         android:hint="price" />
 
+    <EditText
+        android:id="@+id/QuantatyEt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="430dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginRight="100dp"
+        android:hint="Quantaty" />
+
     <Button
 
         android:id="@+id/addProductBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Add Product"
-        android:layout_marginTop="450dp"
+        android:layout_marginTop="520dp"
         android:layout_centerHorizontal="true"/>
 
 
