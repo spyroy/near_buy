@@ -6,6 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".UserFrag">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:ignore="MissingConstraints" />
     <TextView
         android:id="@+id/user_title"
         android:layout_width="wrap_content"
