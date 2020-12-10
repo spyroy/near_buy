@@ -60,10 +60,8 @@ com/example/near_buy/MyAdapter.java
  com.example.near_buy.MyAdapter
  com.example.near_buy.MyAdapter$1
  com.example.near_buy.MyAdapter$MyViewHolder
-com/example/near_buy/storeFrag.java
- com.example.near_buy.storeFrag
- com.example.near_buy.storeFrag$1
- com.example.near_buy.storeFrag$2
+com/example/near_buy/ModelProduct.java
+ com.example.near_buy.ModelProduct
 com/example/near_buy/user.java
  com.example.near_buy.user
 com/example/near_buy/seller_info.java
@@ -81,10 +79,18 @@ com/example/near_buy/SearchFrag.java
 com/example/near_buy/ScrollingActivity.java
  com.example.near_buy.ScrollingActivity
  com.example.near_buy.ScrollingActivity$1
+com/example/near_buy/UserFrag.java
+ com.example.near_buy.UserFrag
+com/example/near_buy/storeFrag.java
+ com.example.near_buy.storeFrag
+ com.example.near_buy.storeFrag$1
+ com.example.near_buy.storeFrag$2
 com/example/near_buy/ProductsAdapter.java
  com.example.near_buy.ProductsAdapter
  com.example.near_buy.ProductsAdapter$1
  com.example.near_buy.ProductsAdapter$HolderProducts
+com/example/near_buy/ProductsFilterOnShops.java
+ com.example.near_buy.ProductsFilterOnShops
 com/example/near_buy/ShopAdapter.java
  com.example.near_buy.ShopAdapter
  com.example.near_buy.ShopAdapter$1
@@ -95,5 +101,8 @@ com/example/near_buy/shopDetailsActivity.java
  com.example.near_buy.shopDetailsActivity$2
  com.example.near_buy.shopDetailsActivity$3
  com.example.near_buy.shopDetailsActivity$4
-com/example/near_buy/UserFrag.java
- com.example.near_buy.UserFrag
+ com.example.near_buy.shopDetailsActivity$5
+ com.example.near_buy.shopDetailsActivity$6
+ com.example.near_buy.shopDetailsActivity$7
+ com.example.near_buy.shopDetailsActivity$8
+ com.example.near_buy.shopDetailsActivity$9

@@ -32,6 +32,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.HolderShop>{
     @Override
     public void onBindViewHolder(@NonNull HolderShop holder, int position) {
         Manager shop = shopList.get(position);
+        final String uid = shop.getUid();
         String Address = shop.getStore_address();
         String email = shop.getEmail();
         String shopName = shop.getStore();
@@ -57,7 +58,7 @@ public class ShopAdapter extends RecyclerView.Adapter<ShopAdapter.HolderShop>{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, shopDetailsActivity.class);
-                intent.putExtra("shopName", shopName);
+                intent.putExtra("shopUid", uid);
                 context.startActivity(intent);
             }
         });

@@ -7,6 +7,8 @@ import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,13 +19,15 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.HolderProducts>{
+public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.HolderProducts> implements Filterable {
     private Context context;
-    public ArrayList<Manager> productList;
+    public ArrayList<ModelProduct> productList, filterList;
+    private ProductsFilterOnShops filter;
 
-    public ProductsAdapter (Context context, ArrayList<Manager> productList){
+    public ProductsAdapter (Context context, ArrayList<ModelProduct> productList){
         this.context = context;
         this.productList = productList;
+        this.filterList = productList;
     }
 
     @NonNull
@@ -35,27 +39,25 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
 
     @Override
     public void onBindViewHolder(@NonNull HolderProducts holder, int position) {
-        Manager products = productList.get(position);
-        List<ContactsContract.CommonDataKinds.Relation> prods = products.getProducts();
-        //String price = products;
-//        String shopName = shop.getStore();
-//        String phone = String.valueOf(shop.getPhone());
-//        String open = shop.getIsOpen();
-//        String name = shop.getName();
-//
-//        holder.name.setText("seller name: " + name);
-//        holder.address.setText("Address: " + Address);
-//        holder.shop_name.setText("shop name: " + shopName);
-//        holder.shop_phone.setText("shop phone: " + phone);
-//
-//        if(open.equals("true")){
-//            holder.isOpen.setText("shop is open");
-//            holder.isOpen.setBackgroundColor(Color.GREEN);
-//        }
-//        else {
-//            holder.isOpen.setText("shop is closed");
-//            holder.isOpen.setBackgroundColor(Color.RED);
-//        }
+        ModelProduct products = productList.get(position);
+        List<ContactsContract.CommonDataKinds.Relation> prods;
+        String ProductId = products.getProductId();
+        String ProductName = products.getProductName();
+        String ProductPrice = products.getProductPrice();
+        String ProductQuantity = products.getProductQuantity();
+        String TimeStamp = products.getTimestamp();
+        String uid = products.getUid();
+
+        holder.product_name.setText("Product Name: " + ProductName);
+        holder.price.setText("Price: " + ProductPrice);
+        holder.onStock.setText("On Stock: " + ProductQuantity);
+
+        if(Integer.parseInt(ProductQuantity) > 0){
+            holder.onStock.setBackgroundColor(Color.GREEN);
+        }
+        else{
+            holder.onStock.setBackgroundColor(Color.RED);
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +73,14 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
     @Override
     public int getItemCount() {
         return productList.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        if(filter == null){
+            filter = new ProductsFilterOnShops(this,filterList);
+        }
+        return filter;
     }
 
     class HolderProducts extends RecyclerView.ViewHolder{

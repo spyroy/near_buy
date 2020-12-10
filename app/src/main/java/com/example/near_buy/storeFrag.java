@@ -27,6 +27,7 @@ import java.util.ArrayList;
  */
 public class storeFrag extends Fragment {
     private RecyclerView recycle;
+    public String shopUid;
     ArrayList<Manager> shopsList;
     private ShopAdapter shopAdapter;
 
@@ -113,7 +114,7 @@ public class storeFrag extends Fragment {
         });
     }
 
-
+//TODO
     public void loadShops(String city){
         shopsList = new ArrayList<>();
 
