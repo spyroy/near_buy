@@ -1,18 +1,13 @@
 package com.example.near_buy;
 
-import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -71,8 +66,7 @@ public class UserFrag extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         View signed = inflater.inflate(R.layout.fragment_user, container, false);
         View unsigned = inflater.inflate(R.layout.fragment_unsigned_user, container, false);
-
-        Button logout = (Button) signed.findViewById(R.id.logout);
+        Button logout = (Button) signed.findViewById(R.id.logout); // CLICK ME AND REFRESH TO UNSIGNED FRAGMENT
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             return signed;
@@ -81,19 +75,12 @@ public class UserFrag extends Fragment implements View.OnClickListener {
             return unsigned;
 
         }
-
-        // Inflate the layout for this fragment
     }
 
 
     @Override
     public void onClick(View view) {
-//        Fragment fragment = null;
-//        switch (view.getId()) {
-//            case R.id.logout:
-//                fragment = new UnsignedUser();
-//                break;
-//        }
+
     }
 
     }

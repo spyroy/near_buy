@@ -311,7 +311,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
 
     @Override
     public void onProviderDisabled(@NonNull String provider) {
-        Toast.makeText(this, "Please trun un GPS location", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Please turn on GPS location", Toast.LENGTH_SHORT).show();
 
     }
 
