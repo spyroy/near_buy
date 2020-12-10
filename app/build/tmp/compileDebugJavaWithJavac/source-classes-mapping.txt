@@ -85,12 +85,12 @@ com/example/near_buy/storeFrag.java
  com.example.near_buy.storeFrag
  com.example.near_buy.storeFrag$1
  com.example.near_buy.storeFrag$2
+com/example/near_buy/ProductsFilterOnShops.java
+ com.example.near_buy.ProductsFilterOnShops
 com/example/near_buy/ProductsAdapter.java
  com.example.near_buy.ProductsAdapter
  com.example.near_buy.ProductsAdapter$1
  com.example.near_buy.ProductsAdapter$HolderProducts
-com/example/near_buy/ProductsFilterOnShops.java
- com.example.near_buy.ProductsFilterOnShops
 com/example/near_buy/ShopAdapter.java
  com.example.near_buy.ShopAdapter
  com.example.near_buy.ShopAdapter$1

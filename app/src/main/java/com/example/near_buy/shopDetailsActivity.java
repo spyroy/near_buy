@@ -160,7 +160,7 @@ public class shopDetailsActivity extends AppCompatActivity {
                     String email = "" + ds.child("email").getValue();
                     String address = "" + ds.child("address").getValue();
                     String city = "" + ds.child("city").getValue();
-                    int phone = (int) ds.child("phone").getValue();
+                    long phone = (long) ds.child("phone").getValue();
                     String type = "" + ds.child("type").getValue();
                     String Uid = "" + ds.child("Uid").getValue();
                 }
