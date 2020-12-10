@@ -181,7 +181,7 @@ public class shopDetailsActivity extends AppCompatActivity {
                 String name = "" + snapshot.child("name").getValue();
                 shop_name = "" + snapshot.child("store").getValue();
                 shop_email = "" + snapshot.child("email").getValue();
-                shop_address = "" + snapshot.child("store_address").getValue();
+                shop_address = "" + snapshot.child("store_city").getValue();
                 shop_phone = "" + snapshot.child("store_phone").getValue();
                 shop_open = "" + snapshot.child("isOpen").getValue();
 
