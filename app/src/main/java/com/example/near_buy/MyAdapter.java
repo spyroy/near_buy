@@ -1,4 +1,4 @@
-package com.example.near_buy;
+ package com.example.near_buy;
 
 import android.content.Context;
 import android.content.Intent;

@@ -237,7 +237,7 @@ public class register extends AppCompatActivity implements LocationListener {
 
 
     private void detectLocation() {
-        Toast.makeText(this, "Please waite ... ", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Please wait :) ", Toast.LENGTH_SHORT).show();
 
         locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {

@@ -41,8 +41,6 @@ com/example/near_buy/data/LoginRepository.java
  com.example.near_buy.data.LoginRepository
 com/example/near_buy/storeFrag.java
  com.example.near_buy.storeFrag
- com.example.near_buy.storeFrag$1
- com.example.near_buy.storeFrag$2
 com/example/near_buy/data/Result.java
  com.example.near_buy.data.Result
  com.example.near_buy.data.Result$1
@@ -74,6 +72,8 @@ com/example/near_buy/MainUserActivity.java
  com.example.near_buy.MainUserActivity
 com/example/near_buy/UserFrag.java
  com.example.near_buy.UserFrag
+com/example/near_buy/UnsignedUser.java
+ com.example.near_buy.UnsignedUser
 com/example/near_buy/SearchFrag.java
  com.example.near_buy.SearchFrag
 com/example/near_buy/ScrollingActivity.java

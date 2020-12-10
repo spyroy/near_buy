@@ -85,7 +85,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                     detectLocation();
                 } else {
                     // not allowed , request
-                    requestlocationPermission();
+                    requestlocationPrmission();
                 }
             }
         });
@@ -268,7 +268,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                 (PackageManager.PERMISSION_GRANTED);
         return  result;
     }
-    private void requestlocationPermission(){
+    private void requestlocationPrmission(){
         ActivityCompat.requestPermissions(this,locationPermissoin,LOCATION_REQUEST_CODE);
     }
 

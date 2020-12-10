@@ -1744,6 +1744,7 @@ id Description
 id Discount
 id Email
 id FUNCTION
+id Helloguest
 id Login_button
 id META
 id NO_DEBUG
@@ -1982,7 +1983,7 @@ id line3
 id linear
 id listMode
 id list_item
-id log_in
+id log_in2
 id log_in_title
 id logout
 id logutBtn
@@ -2071,7 +2072,7 @@ id radio
 id ratio
 id rectangles
 id recycle
-id register
+id register2
 id register_seller
 id reverseSawtooth
 id right
@@ -2216,6 +2217,7 @@ id triangle
 id unchecked
 id uniform
 id unlabeled
+id unsignedfrag
 id up
 id useLogo
 id userFrag
@@ -2326,6 +2328,7 @@ layout design_text_input_start_icon
 layout fragment_home
 layout fragment_search
 layout fragment_store
+layout fragment_unsigned_user
 layout fragment_user
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

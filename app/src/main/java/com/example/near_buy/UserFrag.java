@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,13 +13,14 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link UserFrag#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class UserFrag extends Fragment {
+public class UserFrag extends Fragment implements View.OnClickListener {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +30,8 @@ public class UserFrag extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private FirebaseAuth firebaseAuth;
+
 
     public UserFrag() {
         // Required empty public constructor
@@ -63,12 +67,31 @@ public class UserFrag extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View signed = inflater.inflate(R.layout.fragment_user, container, false);
+        View unsigned = inflater.inflate(R.layout.fragment_unsigned_user, container, false);
+
+        Button logout = (Button) signed.findViewById(R.id.logout);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            return signed;
+
+        }else{
+            return unsigned;
+
+        }
 
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_user, container, false);
     }
 
 
+    @Override
+    public void onClick(View view) {
+//        Fragment fragment = null;
+//        switch (view.getId()) {
+//            case R.id.logout:
+//                fragment = new UnsignedUser();
+//                break;
+//        }
+    }
 
-
-}
+    }
