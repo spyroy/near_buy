@@ -1,5 +1,6 @@
 package com.example.near_buy;
 
+import android.os.Build;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,10 +9,15 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +37,7 @@ public class storeFrag extends Fragment {
     public String shopUid;
     ArrayList<Manager> shopsList;
     private ShopAdapter shopAdapter;
+    private String myCity;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -65,11 +72,34 @@ public class storeFrag extends Fragment {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        setHasOptionsMenu(true);
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+    }
+
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater){
+        inflater.inflate(R.menu.menu_scrolling,menu);
+        menu.findItem(R.id.action_sort).setVisible(true);
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    public boolean onOptionsItemSelected(MenuItem item){
+        int id = item.getItemId();
+        if(id == R.id.action_sort){
+            Toast.makeText(getActivity(),"sort",Toast.LENGTH_SHORT).show();
+            loadDetails();
+//            FragmentTransaction ft = getFragmentManager().beginTransaction();
+//            if (Build.VERSION.SDK_INT >= 26) {
+//                ft.setReorderingAllowed(false);
+//            }
+//            Toast.makeText(getActivity(),myCity,Toast.LENGTH_SHORT).show();
+//            ft.detach(this).attach(this).commit();
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -80,7 +110,14 @@ public class storeFrag extends Fragment {
             return null;
         }
         View RootView = inflater.inflate(R.layout.fragment_store, container, false);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+
+        }
+
         loadShops();
+
         //loadShops(myCity);
         recycle = (RecyclerView)RootView.findViewById(R.id.recycle);
 //        if(recycle == null){
@@ -91,6 +128,30 @@ public class storeFrag extends Fragment {
 //            recycle.setAdapter(shopAdapter);
 //        }
         return RootView;
+    }
+
+    private void loadDetails() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        if (user != null) {
+            String userid = user.getUid();
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
+            ref.child(userid).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    if(snapshot.child("type").getValue().toString() == "User")
+                        loadShops(snapshot.child("city").getValue().toString());
+                    else if(snapshot.child("type").getValue().toString() == "seller")
+                        loadShops(snapshot.child("store_city").getValue().toString());
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
     }
 
     public void loadShops(){
@@ -136,6 +197,9 @@ public class storeFrag extends Fragment {
                         shopsList.add(shop);
                     }
                 }
+                Collections.reverse(shopsList);
+                shopAdapter = new ShopAdapter(getContext(),shopsList);
+                recycle.setAdapter(shopAdapter);
 
             }
 

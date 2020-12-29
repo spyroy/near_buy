@@ -1675,6 +1675,7 @@ drawable ic_baseline_phone_iphone_24
 drawable ic_baseline_search_24
 drawable ic_baseline_security_24
 drawable ic_baseline_shopping_cart_24
+drawable ic_baseline_sort_24
 drawable ic_baseline_store_24
 drawable ic_baseline_storefront_24
 drawable ic_baseline_user_24
@@ -1810,6 +1811,7 @@ id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
 id action_settings
+id action_sort
 id action_text
 id actions
 id activity_chooser_view_content
