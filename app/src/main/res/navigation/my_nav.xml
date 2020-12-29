@@ -16,10 +16,10 @@
         android:label="fragment_store"
         tools:layout="@layout/fragment_store" />
     <fragment
-        android:id="@+id/searchFrag"
-        android:name="com.example.near_buy.SearchFrag"
+        android:id="@+id/cartFrag"
+        android:name="com.example.near_buy.CartFrag"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_cart" />
     <fragment
         android:id="@+id/userFrag"
         android:name="com.example.near_buy.UserFrag"

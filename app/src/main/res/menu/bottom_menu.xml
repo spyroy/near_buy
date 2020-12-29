@@ -13,11 +13,10 @@
         android:icon="@drawable/ic_baseline_storefront_24"
         />
 
-<!--    <item-->
-<!--        android:id="@+id/searchFrag"-->
-<!--        android:title="Search"-->
-<!--        android:icon="@drawable/ic_baseline_search_24"-->
-<!--        />-->
+    <item
+        android:id="@+id/cartFrag"
+        android:icon="@drawable/ic_baseline_shopping_cart_24"
+        android:title="Cart" />
 
     <item
         android:id="@+id/userFrag"

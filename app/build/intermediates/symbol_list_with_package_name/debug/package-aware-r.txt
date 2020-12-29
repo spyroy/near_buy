@@ -1855,6 +1855,7 @@ id callBtn
 id cancel_action
 id cancel_button
 id cartBtn
+id cartFrag
 id center
 id center_horizontal
 id center_vertical
@@ -2093,7 +2094,6 @@ id scrollIndicatorUp
 id scrollView
 id scrollView2
 id scrollable
-id searchFrag
 id searchProduct
 id search_badge
 id search_bar
@@ -2327,8 +2327,8 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout fragment_cart
 layout fragment_home
-layout fragment_search
 layout fragment_store
 layout fragment_unsigned_user
 layout fragment_user
