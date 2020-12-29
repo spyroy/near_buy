@@ -11,17 +11,10 @@ com/example/near_buy/register.java
  com.example.near_buy.register$3
  com.example.near_buy.register$3$1
  com.example.near_buy.register$3$1$1
-com/example/near_buy/shopDetailsActivity.java
- com.example.near_buy.shopDetailsActivity
- com.example.near_buy.shopDetailsActivity$1
- com.example.near_buy.shopDetailsActivity$2
- com.example.near_buy.shopDetailsActivity$3
- com.example.near_buy.shopDetailsActivity$4
- com.example.near_buy.shopDetailsActivity$5
- com.example.near_buy.shopDetailsActivity$6
- com.example.near_buy.shopDetailsActivity$7
- com.example.near_buy.shopDetailsActivity$8
- com.example.near_buy.shopDetailsActivity$9
+com/example/near_buy/MainSellerActivity.java
+ com.example.near_buy.MainSellerActivity
+ com.example.near_buy.MainSellerActivity$1
+ com.example.near_buy.MainSellerActivity$2
 com/example/near_buy/MainActivity.java
  com.example.near_buy.MainActivity
  com.example.near_buy.MainActivity$1
@@ -58,10 +51,11 @@ com/example/near_buy/data/Result.java
  com.example.near_buy.data.Result$1
  com.example.near_buy.data.Result$Error
  com.example.near_buy.data.Result$Success
-com/example/near_buy/ShopAdapter.java
- com.example.near_buy.ShopAdapter
- com.example.near_buy.ShopAdapter$1
- com.example.near_buy.ShopAdapter$HolderShop
+com/example/near_buy/AddProductActivity.java
+ com.example.near_buy.AddProductActivity
+ com.example.near_buy.AddProductActivity$1
+ com.example.near_buy.AddProductActivity$2
+ com.example.near_buy.AddProductActivity$3
 com/example/near_buy/single_store.java
  com.example.near_buy.single_store
 com/example/near_buy/data/model/LoggedInUser.java
@@ -96,12 +90,18 @@ com/example/near_buy/Seller_main_activity.java
  com.example.near_buy.Seller_main_activity
  com.example.near_buy.Seller_main_activity$1
  com.example.near_buy.Seller_main_activity$2
-com/example/near_buy/MainSellerActivity.java
- com.example.near_buy.MainSellerActivity
- com.example.near_buy.MainSellerActivity$1
- com.example.near_buy.MainSellerActivity$2
-com/example/near_buy/AddProductActivity.java
- com.example.near_buy.AddProductActivity
- com.example.near_buy.AddProductActivity$1
- com.example.near_buy.AddProductActivity$2
- com.example.near_buy.AddProductActivity$3
+com/example/near_buy/ShopAdapter.java
+ com.example.near_buy.ShopAdapter
+ com.example.near_buy.ShopAdapter$1
+ com.example.near_buy.ShopAdapter$HolderShop
+com/example/near_buy/shopDetailsActivity.java
+ com.example.near_buy.shopDetailsActivity
+ com.example.near_buy.shopDetailsActivity$1
+ com.example.near_buy.shopDetailsActivity$2
+ com.example.near_buy.shopDetailsActivity$3
+ com.example.near_buy.shopDetailsActivity$4
+ com.example.near_buy.shopDetailsActivity$5
+ com.example.near_buy.shopDetailsActivity$6
+ com.example.near_buy.shopDetailsActivity$7
+ com.example.near_buy.shopDetailsActivity$8
+ com.example.near_buy.shopDetailsActivity$9

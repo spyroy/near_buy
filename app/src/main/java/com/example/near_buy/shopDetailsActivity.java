@@ -41,6 +41,7 @@ public class shopDetailsActivity extends AppCompatActivity {
     private ImageButton filterBtn;
     private EditText searchProduct;
     private RecyclerView recycler;
+    private String shopLatitude, shopLongitude;
 
     private FirebaseAuth fAuth;
 
@@ -141,6 +142,9 @@ public class shopDetailsActivity extends AppCompatActivity {
     //TODO
     //need to add latitude etc.
     private void openMap() {
+        String address ="https://maps.google.com/maps?safddr=" + shopLatitude + "," + shopLongitude + "&daddr=" + shopLatitude + "," +shopLongitude;
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(address));
+        startActivity(intent);
     }
 
     private void dialPhone() {
@@ -184,6 +188,8 @@ public class shopDetailsActivity extends AppCompatActivity {
                 shop_address = "" + snapshot.child("store_city").getValue();
                 shop_phone = "" + snapshot.child("store_phone").getValue();
                 shop_open = "" + snapshot.child("isOpen").getValue();
+                shopLatitude =""+snapshot.child("latitude").getValue();
+                shopLongitude =""+snapshot.child("longitude").getValue();
 
                 shopAddress.setText(shop_address);
                 shopEmail.setText(shop_email);

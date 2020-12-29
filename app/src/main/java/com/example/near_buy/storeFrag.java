@@ -19,6 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -80,6 +81,7 @@ public class storeFrag extends Fragment {
         }
         View RootView = inflater.inflate(R.layout.fragment_store, container, false);
         loadShops();
+        //loadShops(myCity);
         recycle = (RecyclerView)RootView.findViewById(R.id.recycle);
 //        if(recycle == null){
 //            shopsList = new ArrayList<>();
@@ -103,6 +105,8 @@ public class storeFrag extends Fragment {
                     Manager shop = ds.getValue(Manager.class);
                     shopsList.add(shop);
                 }
+                //reverse order
+                Collections.reverse(shopsList);
                 shopAdapter = new ShopAdapter(getContext(),shopsList);
                 recycle.setAdapter(shopAdapter);
             }
@@ -114,6 +118,7 @@ public class storeFrag extends Fragment {
         });
     }
 
+
 //TODO
     public void loadShops(String city){
         shopsList = new ArrayList<>();
@@ -124,10 +129,14 @@ public class storeFrag extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 shopsList.clear();
                 for(DataSnapshot ds : snapshot.getChildren()){
-                    shop shop = ds.getValue(shop.class);
+                    Manager shop = ds.getValue(Manager.class);
                     String shopCity = "" + ds.child("city").getValue();
 
+                    if(shopCity.equals(city)){
+                        shopsList.add(shop);
+                    }
                 }
+
             }
 
             @Override

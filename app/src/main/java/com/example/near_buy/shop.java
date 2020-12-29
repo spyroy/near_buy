@@ -11,6 +11,7 @@ public class shop {
     private String type;
 
 
+
     public shop(){}
 
     public shop(String email, String IsOpen, String name , int phone, String store , String store_address, String store_city, int store_phone , String type){

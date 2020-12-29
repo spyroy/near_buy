@@ -14,6 +14,8 @@ public class Manager {
     private  int  phone, store_phone;
     private  String type ="seller";
 
+    private double latitude , longitude;
+
     private String IsOpen;
     private  String Store_city;
     private List<ContactsContract.CommonDataKinds.Relation> products = new ArrayList<>();
@@ -23,7 +25,7 @@ public class Manager {
     }
 
     //send data at register
-    public Manager(String uid,String email, String IsOpen, String name, int phone,String store,String address, String Store_city,int store_phone, String type){
+    public Manager(String uid,String email, String IsOpen, String name, int phone,String store,String address, String Store_city,int store_phone, String type, double longitude, double latitude){
         this.uid=uid;
         this.email = email;
         this.IsOpen = IsOpen;
@@ -34,10 +36,12 @@ public class Manager {
         this.Store_city = Store_city;
         this.store_phone = store_phone;
         this.type = type;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     //retrieve info from database
-    public Manager(String uid,String email, String IsOpen,  String name, int store_phone, String store, List<ContactsContract.CommonDataKinds.Relation> products, String store_address){
+    public Manager(String uid,String email, String IsOpen,  String name, int store_phone, String store, List<ContactsContract.CommonDataKinds.Relation> products, String store_address,double longitude, double latitude){
         this.uid=uid;
         this.name = name;
         this.email = email;
@@ -45,6 +49,8 @@ public class Manager {
         this.store_address = store_address;
         this.store_phone = store_phone;
         this.products = products;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     public String getName() {
@@ -131,5 +137,21 @@ public class Manager {
 
     public void setUid(String uid) {
         this.uid = uid;
+    }
+
+    public double getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 }

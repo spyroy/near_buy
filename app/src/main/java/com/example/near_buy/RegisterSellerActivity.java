@@ -52,7 +52,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
 
     private LocationManager locationManager;
 
-    private double latitude, longitude;
+    private double latitude = 0.0, longitude = 0.0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -213,7 +213,7 @@ public class RegisterSellerActivity extends AppCompatActivity implements Locatio
                             //return;
                             // }
                             String uid = fAuth.getUid();
-                            Manager m = new Manager(uid,email,"true",  mFullname.getText().toString().trim(),finalPhone,mShopname.getText().toString().trim(),address, mcity.getText().toString().trim(), finalPhone,type);
+                            Manager m = new Manager(uid,email,"true",  mFullname.getText().toString().trim(),finalPhone,mShopname.getText().toString().trim(),address, mcity.getText().toString().trim(), finalPhone,type,longitude,latitude);
                             FirebaseDatabase.getInstance().getReference("users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                     .setValue(m).addOnCompleteListener(new OnCompleteListener<Void>() {
