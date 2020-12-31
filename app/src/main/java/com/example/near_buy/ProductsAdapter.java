@@ -47,6 +47,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
         String ProductQuantity = products.getProductQuantity();
         String TimeStamp = products.getTimestamp();
         String uid = products.getUid();
+        //description TODO
 
         holder.product_name.setText("Product Name: " + ProductName);
         holder.price.setText("Price: " + ProductPrice);
@@ -62,14 +63,16 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
         //TODO
         //add product to cart
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(context, shopDetailsActivity.class);
-//                intent.putExtra("shopName", "productName");
-//                context.startActivity(intent);
-//            }
-//        });
+        holder.addToCart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, dialog.class);
+                intent.putExtra("ProductName", ProductName);
+                intent.putExtra( "price", ProductPrice);
+                intent.putExtra( "quantity", ProductQuantity);
+                context.startActivity(intent);
+            }
+        });
     }
 
 

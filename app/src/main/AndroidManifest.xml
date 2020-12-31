@@ -94,6 +94,8 @@
             android:label="Register Activity"
             android:parentActivityName=".register" />
 
+        <activity android:name=".dialog"></activity>
+
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"
             android:value="com.example.near_buy.MainActivity" />

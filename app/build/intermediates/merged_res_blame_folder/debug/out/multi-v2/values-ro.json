@@ -4,23 +4,6 @@
             "outputFile": "C:\\Users\\spyro\\AndroidStudioProjects\\near_buy11\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ro\\values-ro.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\spyro\\.gradle\\caches\\transforms-2\\files-2.1\\299f5da7d401a5fbb6b720f680ce848b\\navigation-ui-2.3.1\\res\\values-ro\\values-ro.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,165",
-                        "endColumns": "109,123",
-                        "endOffsets": "160,284"
-                    },
-                    "to": {
-                        "startLines": "47,48",
-                        "startColumns": "4,4",
-                        "startOffsets": "5600,5710",
-                        "endColumns": "109,123",
-                        "endOffsets": "5705,5829"
-                    }
-                },
-                {
                     "source": "C:\\Users\\spyro\\.gradle\\caches\\transforms-2\\files-2.1\\fddb1ae14a7a9b9a3acdaeb1009a8259\\jetified-play-services-basement-17.1.1\\res\\values-ro\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -69,6 +52,23 @@
                         "startOffsets": "5918",
                         "endColumns": "100",
                         "endOffsets": "6014"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\spyro\\.gradle\\caches\\transforms-2\\files-2.1\\09f0c609eb81831771fa2dc170fadd15\\navigation-ui-2.3.2\\res\\values-ro\\values-ro.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,165",
+                        "endColumns": "109,123",
+                        "endOffsets": "160,284"
+                    },
+                    "to": {
+                        "startLines": "47,48",
+                        "startColumns": "4,4",
+                        "startOffsets": "5600,5710",
+                        "endColumns": "109,123",
+                        "endOffsets": "5705,5829"
                     }
                 },
                 {

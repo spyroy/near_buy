@@ -1657,8 +1657,10 @@ drawable googleg_standard_color_18
 drawable groceriesa
 drawable ic_add_prodact_primary
 drawable ic_add_prodact_whit
+drawable ic_baseline_add
 drawable ic_baseline_add_shopping_cart_24
 drawable ic_baseline_arrow_back_white
+drawable ic_baseline_decrease
 drawable ic_baseline_email_24
 drawable ic_baseline_fastfood_black
 drawable ic_baseline_filter_list_black
@@ -1838,6 +1840,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id back
 id backBtn
 id barrier
 id baseline
@@ -1858,6 +1861,7 @@ id cancel_action
 id cancel_button
 id cartBtn
 id cartFrag
+id cartImage
 id center
 id center_horizontal
 id center_vertical
@@ -1880,6 +1884,7 @@ id confirm_button
 id container
 id content
 id contentPanel
+id continueBtn
 id coordinator
 id cos
 id create_new_account
@@ -1891,10 +1896,12 @@ id date_picker_actions
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
+id decrementBtn
 id default_activity_button
 id deltaRelative
 id dependency_ordering
 id desc_text
+id descriptionTv
 id design_bottom_sheet
 id design_menu_item_action_area
 id design_menu_item_action_area_stub
@@ -1906,6 +1913,7 @@ id direct
 id disableHome
 id disablePostScroll
 id disableScroll
+id discountNoteTv
 id dragDown
 id dragEnd
 id dragLeft
@@ -1933,6 +1941,7 @@ id fill_vertical
 id filled
 id filterBtn
 id filterProducts
+id finalPriceTv
 id fitToContents
 id fixed
 id flip
@@ -1971,6 +1980,7 @@ id imageButton26
 id imageButton27
 id imageView
 id imageView3
+id incrementBtn
 id info
 id invisible
 id italic
@@ -2047,7 +2057,9 @@ id off
 id on
 id open
 id openSingle
+id originalPriceTv
 id outline
+id pQuantity
 id packed
 id parallax
 id parent
@@ -2072,6 +2084,7 @@ id products
 id progressBar
 id progress_circular
 id progress_horizontal
+id quantityTv
 id radio
 id ratio
 id rectangles
@@ -2202,6 +2215,7 @@ id time
 id title
 id titleDividerNoCustom
 id titleEt
+id titleTv
 id title_template
 id title_text
 id toggle
@@ -2329,6 +2343,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_quantity
 layout fragment_cart
 layout fragment_home
 layout fragment_store

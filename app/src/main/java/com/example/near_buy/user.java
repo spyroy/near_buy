@@ -30,11 +30,14 @@ public class user {
     }
 
     //retrieve info from database
-    public user(String name, String email,String address,int phone, List<ContactsContract.CommonDataKinds.Relation> items){
+    public user(String address, String city,String email,String name,int phone,String type,String Uid, List<ContactsContract.CommonDataKinds.Relation> items){
         this.name = name;
         this.email = email;
+        this.city = city;
         this.phone = phone;
         this.address = address;
+        this.type = type;
+        this.Uid = Uid;
         this.items = items;
     }
 
