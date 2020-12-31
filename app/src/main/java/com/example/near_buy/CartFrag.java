@@ -2,11 +2,24 @@ package com.example.near_buy;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -14,6 +27,10 @@ import android.view.ViewGroup;
  * create an instance of this fragment.
  */
 public class CartFrag extends Fragment {
+    private RecyclerView recycle;
+    ArrayList<ModelProduct> cartList;
+    private ProductsAdapterCart ProductsAdapterCart;
+    private FirebaseAuth fAuth;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -59,6 +76,45 @@ public class CartFrag extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cart, container, false);
+
+        if (container == null) {
+            return null;
+        }
+
+        View RootView = inflater.inflate(R.layout.fragment_cart, container, false);
+
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null){
+
+        }
+
+        loadCart();
+        recycle = (RecyclerView)RootView.findViewById(R.id.showProducts2);
+        return RootView;
+    }
+
+    private void loadCart() {
+        cartList = new ArrayList<>();
+        FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        String currentId = currentUser.getUid();
+
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
+        ref.child(currentId).child("Cart").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                cartList.clear();
+                for(DataSnapshot ds : snapshot.getChildren()){
+                    ModelProduct mp = ds.getValue(ModelProduct.class);
+                    cartList.add(mp);
+                }
+                ProductsAdapterCart = new ProductsAdapterCart(getContext(),cartList);
+                recycle.setAdapter(ProductsAdapterCart);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

@@ -19,10 +19,20 @@ com/example/near_buy/AdapterProductUser.java
  com.example.near_buy.AdapterProductUser$4
  com.example.near_buy.AdapterProductUser$5
  com.example.near_buy.AdapterProductUser$HolderProduct
-com/example/near_buy/MainSellerActivity.java
- com.example.near_buy.MainSellerActivity
- com.example.near_buy.MainSellerActivity$1
- com.example.near_buy.MainSellerActivity$2
+com/example/near_buy/ProductsAdapterCart.java
+ com.example.near_buy.ProductsAdapterCart
+ com.example.near_buy.ProductsAdapterCart$HolderProductsCart
+com/example/near_buy/shopDetailsActivity.java
+ com.example.near_buy.shopDetailsActivity
+ com.example.near_buy.shopDetailsActivity$1
+ com.example.near_buy.shopDetailsActivity$2
+ com.example.near_buy.shopDetailsActivity$3
+ com.example.near_buy.shopDetailsActivity$4
+ com.example.near_buy.shopDetailsActivity$5
+ com.example.near_buy.shopDetailsActivity$6
+ com.example.near_buy.shopDetailsActivity$7
+ com.example.near_buy.shopDetailsActivity$8
+ com.example.near_buy.shopDetailsActivity$9
 com/example/near_buy/MainActivity.java
  com.example.near_buy.MainActivity
  com.example.near_buy.MainActivity$1
@@ -38,11 +48,8 @@ com/example/near_buy/ModelProduct.java
  com.example.near_buy.ModelProduct
 com/example/near_buy/homeFrag.java
  com.example.near_buy.homeFrag
-com/example/near_buy/AddProductActivity.java
- com.example.near_buy.AddProductActivity
- com.example.near_buy.AddProductActivity$1
- com.example.near_buy.AddProductActivity$2
- com.example.near_buy.AddProductActivity$3
+com/example/near_buy/ProductsFilterOnShops.java
+ com.example.near_buy.ProductsFilterOnShops
 com/example/near_buy/BuildConfig.java
  com.example.near_buy.BuildConfig
 com/example/near_buy/RegisterSellerActivity.java
@@ -75,10 +82,10 @@ com/example/near_buy/MyAdapter.java
  com.example.near_buy.MyAdapter
  com.example.near_buy.MyAdapter$1
  com.example.near_buy.MyAdapter$MyViewHolder
-com/example/near_buy/Seller_main_activity.java
- com.example.near_buy.Seller_main_activity
- com.example.near_buy.Seller_main_activity$1
- com.example.near_buy.Seller_main_activity$2
+com/example/near_buy/ProductsAdapter.java
+ com.example.near_buy.ProductsAdapter
+ com.example.near_buy.ProductsAdapter$1
+ com.example.near_buy.ProductsAdapter$HolderProducts
 com/example/near_buy/user.java
  com.example.near_buy.user
 com/example/near_buy/seller_info.java
@@ -98,23 +105,15 @@ com/example/near_buy/add_shop.java
  com.example.near_buy.add_shop
 com/example/near_buy/CartFrag.java
  com.example.near_buy.CartFrag
-com/example/near_buy/ProductsAdapter.java
- com.example.near_buy.ProductsAdapter
- com.example.near_buy.ProductsAdapter$1
- com.example.near_buy.ProductsAdapter$HolderProducts
-com/example/near_buy/ProductsFilterOnShops.java
- com.example.near_buy.ProductsFilterOnShops
-com/example/near_buy/shopDetailsActivity.java
- com.example.near_buy.shopDetailsActivity
- com.example.near_buy.shopDetailsActivity$1
- com.example.near_buy.shopDetailsActivity$2
- com.example.near_buy.shopDetailsActivity$3
- com.example.near_buy.shopDetailsActivity$4
- com.example.near_buy.shopDetailsActivity$5
- com.example.near_buy.shopDetailsActivity$6
- com.example.near_buy.shopDetailsActivity$7
- com.example.near_buy.shopDetailsActivity$8
- com.example.near_buy.shopDetailsActivity$9
+ com.example.near_buy.CartFrag$1
+com/example/near_buy/Seller_main_activity.java
+ com.example.near_buy.Seller_main_activity
+ com.example.near_buy.Seller_main_activity$1
+ com.example.near_buy.Seller_main_activity$2
+com/example/near_buy/MainSellerActivity.java
+ com.example.near_buy.MainSellerActivity
+ com.example.near_buy.MainSellerActivity$1
+ com.example.near_buy.MainSellerActivity$2
 com/example/near_buy/dialog.java
  com.example.near_buy.dialog
  com.example.near_buy.dialog$1
@@ -123,3 +122,8 @@ com/example/near_buy/dialog.java
  com.example.near_buy.dialog$4
  com.example.near_buy.dialog$5
  com.example.near_buy.dialog$6
+com/example/near_buy/AddProductActivity.java
+ com.example.near_buy.AddProductActivity
+ com.example.near_buy.AddProductActivity$1
+ com.example.near_buy.AddProductActivity$2
+ com.example.near_buy.AddProductActivity$3

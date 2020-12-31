@@ -50,6 +50,7 @@ public class ModelProduct {
         return timestamp;
     }
 
+
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
     }

@@ -18,7 +18,7 @@
             android:layout_height="100dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="10dp"
-            android:src="@drawable/ic_baseline_shopping_cart_24" />
+            android:src="@drawable/ic_baseline_shopping_cart_24_white" />
 
         <TextView
             android:id="@+id/titleTv"

@@ -1677,6 +1677,7 @@ drawable ic_baseline_phone_iphone_24
 drawable ic_baseline_search_24
 drawable ic_baseline_security_24
 drawable ic_baseline_shopping_cart_24
+drawable ic_baseline_shopping_cart_24_white
 drawable ic_baseline_sort_24
 drawable ic_baseline_store_24
 drawable ic_baseline_storefront_24
@@ -2132,11 +2133,13 @@ id shopPhoneSingle
 id shopRl
 id shopSingle
 id shop_im
+id shop_im2
 id shop_phone
 id shortcut
 id showCustom
 id showHome
 id showProducts
+id showProducts2
 id showTitle
 id sin
 id skipCollapsed
@@ -2241,6 +2244,7 @@ id useLogo
 id userFrag
 id user_title
 id vertical
+id view
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
@@ -2393,6 +2397,7 @@ layout notification_template_media_custom
 layout notification_template_part_chronometer
 layout notification_template_part_time
 layout row_products
+layout row_products_for_cart
 layout row_shop
 layout select_dialog_item_material
 layout select_dialog_multichoice_material

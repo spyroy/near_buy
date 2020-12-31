@@ -74,7 +74,6 @@ public class dialog extends AppCompatActivity {
                 count++;
                 double calc = count*(Double.valueOf(price));
                 dollar1.setText("$" + calc);
-                price = String.valueOf(calc);
                 number.setText(String.valueOf(count));
             }
         });
@@ -88,7 +87,6 @@ public class dialog extends AppCompatActivity {
                 }
                 double calc = (Double.valueOf(price))*count;
                 dollar1.setText("$" + calc);
-                price = String.valueOf(calc);
                 number.setText(String.valueOf(count));
             }
         });
@@ -113,10 +111,10 @@ public class dialog extends AppCompatActivity {
 
         HashMap<String,Object> hashMap = new HashMap<>();
         hashMap.put("productId",""+id);
-        hashMap.put("productName",ProductName);
-        hashMap.put("productPrice",price);
-        hashMap.put("productQuantity",count);
-        hashMap.put("timeTemp",timesTemp);
+        hashMap.put("productName",""+ProductName);
+        hashMap.put("productPrice",""+dollar1.getText());
+        hashMap.put("productQuantity",""+count);
+        hashMap.put("timeTemp",""+timesTemp);
         hashMap.put("uid",""+fAuth.getUid());
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
