@@ -27,7 +27,7 @@ public class dialog extends AppCompatActivity {
     private TextView title,quantity,description,final_price,dollar1,number;
     private ImageButton plus,minus,back;
     private Button add_to_cart;
-    private String ProductName,price,product_quantity;
+    private String ProductName,price,product_quantity,id;
     private FirebaseAuth fAuth;
     private static int count = 1;
 
@@ -53,6 +53,7 @@ public class dialog extends AppCompatActivity {
         ProductName = getIntent().getStringExtra("ProductName");
         price = getIntent().getStringExtra("price");
         product_quantity = getIntent().getStringExtra("quantity");
+        id = getIntent().getStringExtra("ProductId");
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -73,6 +74,7 @@ public class dialog extends AppCompatActivity {
                 count++;
                 double calc = count*(Double.valueOf(price));
                 dollar1.setText("$" + calc);
+                price = String.valueOf(calc);
                 number.setText(String.valueOf(count));
             }
         });
@@ -86,6 +88,7 @@ public class dialog extends AppCompatActivity {
                 }
                 double calc = (Double.valueOf(price))*count;
                 dollar1.setText("$" + calc);
+                price = String.valueOf(calc);
                 number.setText(String.valueOf(count));
             }
         });
@@ -109,7 +112,7 @@ public class dialog extends AppCompatActivity {
         final String timesTemp = ""+ System.currentTimeMillis();
 
         HashMap<String,Object> hashMap = new HashMap<>();
-        hashMap.put("productId",""+timesTemp);
+        hashMap.put("productId",""+id);
         hashMap.put("productName",ProductName);
         hashMap.put("productPrice",price);
         hashMap.put("productQuantity",count);
