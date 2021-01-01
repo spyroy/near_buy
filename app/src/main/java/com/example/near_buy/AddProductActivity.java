@@ -24,14 +24,14 @@ import java.util.HashMap;
 public class AddProductActivity extends AppCompatActivity {
 
     private ImageView imageProduct;
-    private EditText proName,proPrice,quantity;
+    private EditText proName,proPrice,quantity,Description;
     private Button AddPro;
 
     private Uri image_uri;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
 
-    private String productName,productPeice,productQuantity;
+    private String productName,productPeice,productQuantity,productDecription;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +42,7 @@ public class AddProductActivity extends AppCompatActivity {
         proName = findViewById(R.id.titleEt);
         proPrice = findViewById(R.id.priceEt);
         quantity = findViewById(R.id.QuantatyEt);
+        Description = findViewById(R.id.DescriptionEt);
         AddPro = findViewById(R.id.addProductBtn);
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -65,6 +66,7 @@ public class AddProductActivity extends AppCompatActivity {
         productName = proName.getText().toString().trim();
         productPeice = proPrice.getText().toString().trim();
         productQuantity = quantity.getText().toString().trim();
+        productDecription = Description.getText().toString().trim();
 
         if(TextUtils.isEmpty(productName)){
             Toast.makeText(this,"The Name is Empty... ",Toast.LENGTH_LONG).show();
@@ -74,14 +76,20 @@ public class AddProductActivity extends AppCompatActivity {
         }
         if(TextUtils.isEmpty(productPeice)){
             Toast.makeText(this,"The Price is Empty... ",Toast.LENGTH_LONG).show();
-            proName.setError("Invalid value");
-            proName.setFocusable(true);
+            proPrice.setError("Invalid value");
+            proPrice.setFocusable(true);
             return;
         }
         if(TextUtils.isEmpty(productQuantity)){
             Toast.makeText(this,"The Quantity is Empty... ",Toast.LENGTH_LONG).show();
-            proName.setError("Invalid value");
-            proName.setFocusable(true);
+            quantity.setError("Invalid value");
+            quantity.setFocusable(true);
+            return;
+        }
+        if(TextUtils.isEmpty(productDecription)){
+            Toast.makeText(this,"The Description is Empty... ",Toast.LENGTH_LONG).show();
+            Description.setError("Invalid value");
+            Description.setFocusable(true);
             return;
         }
         
@@ -101,6 +109,7 @@ public class AddProductActivity extends AppCompatActivity {
         hashMap.put("productName",productName);
         hashMap.put("productPrice",productPeice);
         hashMap.put("productQuantity",productQuantity);
+        hashMap.put("Description",productDecription);
         hashMap.put("timeTemp",timesTemp);
         hashMap.put("uid",""+firebaseAuth.getUid());
 
@@ -131,5 +140,6 @@ public class AddProductActivity extends AppCompatActivity {
         proName.setText("");
         proPrice.setText("");
         quantity.setText("");
+        Description.setText("");
     }
 }
