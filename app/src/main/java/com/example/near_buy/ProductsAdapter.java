@@ -46,10 +46,11 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
         String ProductQuantity = products.getProductQuantity();
         String TimeStamp = products.gettimeTemp();
         String uid = products.getUid();
-        //description TODO
+        String Description = products.getDescription();
 
         holder.product_name.setText("Product Name: " + ProductName);
         holder.price.setText("Price: " + ProductPrice);
+        holder.description.setText("Description: " + Description);
         holder.onStock.setText("On Stock: " + ProductQuantity);
 
         if(Integer.parseInt(ProductQuantity) > 0){

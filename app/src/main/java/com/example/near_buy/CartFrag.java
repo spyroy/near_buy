@@ -96,6 +96,9 @@ public class CartFrag extends Fragment {
     private void loadCart() {
         cartList = new ArrayList<>();
         FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+        if(currentUser == null){
+            return;
+        }
         String currentId = currentUser.getUid();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
