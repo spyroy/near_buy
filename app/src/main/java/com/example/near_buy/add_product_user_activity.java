@@ -1,5 +1,7 @@
 package com.example.near_buy;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -121,7 +123,8 @@ public class add_product_user_activity extends AppCompatActivity {
                         //added to db
                         //progressDialog.dismiss();
                         Toast.makeText(add_product_user_activity.this, "The product is added ...", Toast.LENGTH_SHORT).show();
-                        clearData();
+                        count = 1;
+                        onBackPressed();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -137,7 +140,7 @@ public class add_product_user_activity extends AppCompatActivity {
 
     private void clearData() {
         // clear data after uploading
-        number.setText("1");
+
     }
 
 
