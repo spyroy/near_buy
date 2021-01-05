@@ -1,5 +1,6 @@
 package com.example.near_buy;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -7,6 +8,7 @@ import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
@@ -15,6 +17,11 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +52,7 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
         String ProductName = products.getProductName();
         String ProductPrice = products.getProductPrice();
         String ProductQuantity = products.getProductQuantity();
-        String TimeStamp = products.getTimestamp();
+        String timeTemp = products.gettimeTemp();
         String uid = products.getUid();
         //description TODO
 
@@ -63,6 +70,34 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
         //TODO
         //add product to cart
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                holder.MyDialog = new Dialog(context);
+                holder.MyDialog.setContentView(R.layout.delete_dialog);
+                holder.MyDialog.setTitle("Delete Product?");
+                final DatabaseReference child1 = holder.db.child("Cart");
+                holder.Yes = holder.MyDialog.findViewById(R.id.btn_yes);
+                holder.No = holder.MyDialog.findViewById(R.id.btn_no);
+                holder.Yes.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String x=  products.toString();
+                        DatabaseReference s = holder.db.child(timeTemp);
+                        holder.db.child(timeTemp).removeValue();
+                        holder.MyDialog.cancel();
+                    }
+                });
+                holder.No.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        holder.MyDialog.cancel();
+                    }
+                });
+                holder.MyDialog.show();
+            }
+        });
+
     }
 
 
@@ -79,6 +114,10 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
         private TextView description;
         private TextView onStock;
         private TextView discount;
+        public Dialog MyDialog;
+        TextView tvDeleteDiaog;
+        public Button Yes, No;
+        DatabaseReference db;
 
         public HolderProductsCart(@NonNull View itemView) {
             super(itemView);
@@ -87,6 +126,9 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
             description = (TextView)itemView.findViewById(R.id.productDescription);
             onStock = (TextView)itemView.findViewById(R.id.stock);
             discount = (TextView)itemView.findViewById(R.id.Discount);
+            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+            String currentId = currentUser.getUid();
+            db= FirebaseDatabase.getInstance().getReference("users/" + currentId + "/Cart");
         }
     }
 }

@@ -107,7 +107,7 @@
             android:name="com.example.near_buy.register"
             android:label="Register Activity"
             android:parentActivityName="com.example.near_buy.register" />
-        <activity android:name="com.example.near_buy.dialog" />
+        <activity android:name="com.example.near_buy.add_product_user_activity" />
 
         <meta-data
             android:name="android.support.PARENT_ACTIVITY"

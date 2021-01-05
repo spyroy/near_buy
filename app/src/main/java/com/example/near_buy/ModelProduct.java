@@ -1,16 +1,16 @@
 package com.example.near_buy;
 
 public class ModelProduct {
-    private String productId,productName,productPrice,productQuantity,timestamp,uid;
+    private String productId,productName,productPrice,productQuantity,timeTemp,uid;
 
     public ModelProduct(){}
 
-    public ModelProduct(String productId, String productName, String productPrice, String productQuantity, String timestamp, String uid) {
+    public ModelProduct(String productId, String productName, String productPrice, String productQuantity, String timeTemp, String uid) {
         this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
         this.productQuantity = productQuantity;
-        this.timestamp = timestamp;
+        this.timeTemp = timeTemp;
         this.uid = uid;
     }
 
@@ -46,13 +46,13 @@ public class ModelProduct {
         this.productQuantity = productQuantity;
     }
 
-    public String getTimestamp() {
-        return timestamp;
+    public String gettimeTemp() {
+        return timeTemp;
     }
 
 
-    public void setTimestamp(String timestamp) {
-        this.timestamp = timestamp;
+    public void settimeTemp(String timestamp) {
+        this.timeTemp = timestamp;
     }
 
     public String getUid() {

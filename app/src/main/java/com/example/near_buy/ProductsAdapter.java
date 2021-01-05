@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Filter;
 import android.widget.Filterable;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -45,7 +44,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
         String ProductName = products.getProductName();
         String ProductPrice = products.getProductPrice();
         String ProductQuantity = products.getProductQuantity();
-        String TimeStamp = products.getTimestamp();
+        String TimeStamp = products.gettimeTemp();
         String uid = products.getUid();
         //description TODO
 
@@ -66,7 +65,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
         holder.addToCart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context, dialog.class);
+                Intent intent = new Intent(context, add_product_user_activity.class);
                 intent.putExtra("ProductName", ProductName);
                 intent.putExtra( "price", ProductPrice);
                 intent.putExtra( "quantity", ProductQuantity);

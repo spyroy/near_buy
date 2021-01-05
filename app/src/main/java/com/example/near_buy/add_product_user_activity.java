@@ -1,9 +1,6 @@
 package com.example.near_buy;
 
-import android.app.Activity;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -11,7 +8,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,7 +19,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.HashMap;
 import java.util.Objects;
 
-public class dialog extends AppCompatActivity {
+public class add_product_user_activity extends AppCompatActivity {
     private TextView title,quantity,description,final_price,dollar1,number;
     private ImageButton plus,minus,back;
     private Button add_to_cart;
@@ -124,7 +120,7 @@ public class dialog extends AppCompatActivity {
                     public void onSuccess(Void aVoid) {
                         //added to db
                         //progressDialog.dismiss();
-                        Toast.makeText(dialog.this, "The product is added ...", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(add_product_user_activity.this, "The product is added ...", Toast.LENGTH_SHORT).show();
                         clearData();
                     }
                 })
@@ -132,7 +128,7 @@ public class dialog extends AppCompatActivity {
                     @Override
                     public void onFailure(@NonNull Exception e) {
                         //progressDialog.dismiss();
-                        Toast.makeText(dialog.this,""+e.getMessage(),Toast.LENGTH_SHORT).show();
+                        Toast.makeText(add_product_user_activity.this,""+e.getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 });
 

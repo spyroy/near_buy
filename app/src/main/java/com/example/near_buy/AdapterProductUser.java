@@ -47,7 +47,7 @@ public class AdapterProductUser extends RecyclerView.Adapter<AdapterProductUser.
         String productTitle = modelProduct.getProductName();
         String productQuantity = modelProduct.getProductQuantity();
         String productId = modelProduct.getProductId();
-        String timestamp = modelProduct.getTimestamp();
+        String timestamp = modelProduct.gettimeTemp();
 
         //set data
         holder.titleTv.setText(productTitle);

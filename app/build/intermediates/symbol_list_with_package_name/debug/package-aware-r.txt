@@ -1693,6 +1693,7 @@ drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
 drawable ic_mtrl_chip_close_circle
+drawable ic_remove_prod
 drawable ic_search_black_24dp
 drawable images
 drawable mall_background2
@@ -1851,6 +1852,8 @@ id beginning
 id blocking
 id bottom
 id bounce
+id btn_no
+id btn_yes
 id button
 id button2
 id button3
@@ -1997,12 +2000,14 @@ id light
 id line1
 id line3
 id linear
+id linear2
 id listMode
 id list_item
 id log_in2
 id log_in_title
 id logout
 id logutBtn
+id main
 id mainImageView
 id mapBtn
 id masked
@@ -2080,8 +2085,11 @@ id position
 id postLayout
 id priceEt
 id productDescription
+id productDescription2
 id productName
+id productName2
 id productPrice
+id productPrice2
 id products
 id progressBar
 id progress_circular
@@ -2093,6 +2101,8 @@ id rectangles
 id recycle
 id register2
 id register_seller
+id remove_prod
+id remove_prod2
 id reverseSawtooth
 id right
 id right_icon
@@ -2127,6 +2137,7 @@ id selected
 id seller_details
 id shopAddressSingle
 id shopDetails
+id shopDetails2
 id shopEmailSingle
 id shopName
 id shopNameSingle
@@ -2135,12 +2146,14 @@ id shopRl
 id shopSingle
 id shop_im
 id shop_im2
+id shop_im3
 id shop_phone
 id shortcut
 id showCustom
 id showHome
 id showProducts
 id showProducts2
+id showProducts3
 id showTitle
 id sin
 id skipCollapsed
@@ -2167,6 +2180,7 @@ id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
 id stock
+id stock2
 id stop
 id storeCategory
 id storeFrag
@@ -2236,6 +2250,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txt_dia
 id unchecked
 id uniform
 id unlabeled
@@ -2333,6 +2348,7 @@ layout add_shop_layout
 layout content_scrolling
 layout content_stores
 layout custom_dialog
+layout delete_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
 layout design_layout_snackbar
@@ -2399,6 +2415,7 @@ layout notification_template_part_chronometer
 layout notification_template_part_time
 layout row_products
 layout row_products_for_cart
+layout row_products_for_seller
 layout row_shop
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
