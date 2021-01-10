@@ -71,6 +71,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
                 intent.putExtra( "price", ProductPrice);
                 intent.putExtra( "quantity", ProductQuantity);
                 intent.putExtra( "ProductId", ProductId);
+                intent.putExtra( "Description", Description);
                 context.startActivity(intent);
             }
         });

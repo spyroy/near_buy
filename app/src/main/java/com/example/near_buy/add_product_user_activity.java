@@ -22,10 +22,10 @@ import java.util.HashMap;
 import java.util.Objects;
 
 public class add_product_user_activity extends AppCompatActivity {
-    private TextView title,quantity,description,final_price,dollar1,number;
+    private TextView title,quantity,final_price,dollar1,number;
     private ImageButton plus,minus,back;
     private Button add_to_cart;
-    private String ProductName,price,product_quantity,id;
+    private String ProductName,price,product_quantity,id,description;
     private FirebaseAuth fAuth;
     private static int count = 1;
 
@@ -37,7 +37,7 @@ public class add_product_user_activity extends AppCompatActivity {
 
         title = findViewById(R.id.titleTv);
         quantity = findViewById(R.id.pQuantity);
-        description = findViewById(R.id.descriptionTv);
+        //description = findViewById(R.id.descriptionTv);
         final_price = findViewById(R.id.finalPriceTv);
         dollar1 = findViewById(R.id.originalPriceTv);
         number = findViewById(R.id.quantityTv);
@@ -52,6 +52,7 @@ public class add_product_user_activity extends AppCompatActivity {
         price = getIntent().getStringExtra("price");
         product_quantity = getIntent().getStringExtra("quantity");
         id = getIntent().getStringExtra("ProductId");
+        description = getIntent().getStringExtra("Description");
 
         fAuth = FirebaseAuth.getInstance();
 
@@ -92,6 +93,7 @@ public class add_product_user_activity extends AppCompatActivity {
         add_to_cart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                onBackPressed();
                 AddToCart();
             }
 
@@ -100,6 +102,9 @@ public class add_product_user_activity extends AppCompatActivity {
     }
 
     private void AddToCart() {
+        if(fAuth.getUid() == null){
+            return;
+        }
         title.setFocusable(true);
         quantity.setFocusable(true);
         dollar1.setFocusable(true);
@@ -114,28 +119,26 @@ public class add_product_user_activity extends AppCompatActivity {
         hashMap.put("productQuantity",""+count);
         hashMap.put("timeTemp",""+timesTemp);
         hashMap.put("uid",""+fAuth.getUid());
+        hashMap.put("Description",""+description);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
         ref.child(Objects.requireNonNull(fAuth.getUid())).child("Cart").child(timesTemp).setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        //added to db
-                        //progressDialog.dismiss();
                         Toast.makeText(add_product_user_activity.this, "The product is added ...", Toast.LENGTH_SHORT).show();
                         count = 1;
-                        onBackPressed();
+                        //onBackPressed();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        //progressDialog.dismiss();
                         Toast.makeText(add_product_user_activity.this,""+e.getMessage(),Toast.LENGTH_SHORT).show();
                     }
                 });
 
-
+        //onBackPressed();
     }
 
     private void clearData() {
