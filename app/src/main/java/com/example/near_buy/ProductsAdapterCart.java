@@ -55,11 +55,13 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
         String timeTemp = products.gettimeTemp();
         String uid = products.getUid();
         String Description = products.getDescription();
+        String Store = products.getProductStore();
 
         holder.product_name.setText("Product Name: " + ProductName);
         holder.price.setText("Price: " + ProductPrice);
         holder.description.setText("Description: " + Description);
         holder.onStock.setText("On my Stock: " + ProductQuantity);
+        holder.store.setText("Store: " + Store);
 
         if(Integer.parseInt(ProductQuantity) > 0){
             holder.onStock.setBackgroundColor(Color.GREEN);
@@ -115,6 +117,7 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
         private TextView description;
         private TextView onStock;
         private TextView discount;
+        private TextView store;
         public Dialog MyDialog;
         TextView tvDeleteDiaog;
         public Button Yes, No;
@@ -127,6 +130,7 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
             description = (TextView)itemView.findViewById(R.id.productDescription);
             onStock = (TextView)itemView.findViewById(R.id.stock);
             discount = (TextView)itemView.findViewById(R.id.Discount);
+            store = (TextView)itemView.findViewById(R.id.store_of_product);
             FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
             String currentId = currentUser.getUid();
             db= FirebaseDatabase.getInstance().getReference("users/" + currentId + "/Cart");

@@ -2189,6 +2189,7 @@ id storeName
 id storeRecyclerView
 id store_description
 id store_image_view
+id store_of_product
 id store_title
 id stretch
 id submenuarrow

@@ -8,10 +8,12 @@ public class ModelProduct {
     private String timeTemp;
     private String uid;
     private String Description;
+    private String Store;
+
 
     public ModelProduct(){}
 
-    public ModelProduct(String productId, String productName, String productPrice, String productQuantity, String timeTemp, String uid, String Description) {
+    public ModelProduct(String productId, String productName, String productPrice, String productQuantity, String timeTemp, String uid, String Description, String Store) {
         this.productId = productId;
         this.productName = productName;
         this.productPrice = productPrice;
@@ -19,6 +21,7 @@ public class ModelProduct {
         this.timeTemp = timeTemp;
         this.uid = uid;
         this.Description = Description;
+        this.Store = Store;
     }
 
     public String getProductId() {
@@ -76,5 +79,13 @@ public class ModelProduct {
 
     public void setDescription(String description) {
         Description = description;
+    }
+
+    public String getProductStore() {
+        return Store;
+    }
+
+    public void setProductStore(String Store) {
+        this.Store = Store;
     }
 }

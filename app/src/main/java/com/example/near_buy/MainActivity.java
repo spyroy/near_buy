@@ -109,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
         String fa = fAuth.getUid();
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
-        ref.child(fAuth.getUid()).addValueEventListener(new ValueEventListener() {
+        ref.child(fAuth.getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 String ds = snapshot.child("type").getValue().toString();

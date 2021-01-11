@@ -40,6 +40,7 @@ public class MainSellerActivity extends AppCompatActivity {
     TextView tvDeleteDiaog;
     public Button Yes, No;
     public static Context contextOfApplication;
+    String store_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,15 +57,17 @@ public class MainSellerActivity extends AppCompatActivity {
         remove = findViewById(R.id.remove_prod2);
         l = findViewById(R.id.linear2);
         firebaseAuth = FirebaseAuth.getInstance();
-
+        loadMyInfo();
         addprodactBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainSellerActivity.this, AddProductActivity.class));
+                Intent intent = new Intent(MainSellerActivity.this, AddProductActivity.class);
+                intent.putExtra("store_name", store_name);
+                startActivity(intent);
+//              startActivity(new Intent(MainSellerActivity.this, AddProductActivity.class));
             }
         });
 
-        loadMyInfo();
         loadProd();
         recycle = (RecyclerView) findViewById(R.id.showProducts3);
     }
@@ -128,6 +131,7 @@ public class MainSellerActivity extends AppCompatActivity {
                 for (DataSnapshot ds : dataSnapshot.getChildren()) {
                     String name = "" + ds.child("name").getValue();
                     nameT.setText(name);
+                    store_name = "" + ds.child("store").getValue();
 
                     try {
 
