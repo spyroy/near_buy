@@ -81,11 +81,11 @@ public class ModelProduct {
         Description = description;
     }
 
-    public String getProductStore() {
+    public String getStore() {
         return Store;
     }
 
-    public void setProductStore(String Store) {
+    public void setStore(String Store) {
         this.Store = Store;
     }
 }

@@ -55,7 +55,7 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
         String timeTemp = products.gettimeTemp();
         String uid = products.getUid();
         String Description = products.getDescription();
-        String Store = products.getProductStore();
+        String Store = products.getStore();
 
         holder.product_name.setText("Product Name: " + ProductName);
         holder.price.setText("Price: " + ProductPrice);

@@ -27,7 +27,6 @@ public class add_product_user_activity extends AppCompatActivity {
     private Button add_to_cart;
     private String ProductName,price,product_quantity,id,description;
     private String store;
-//    private String store = "Store";
     private FirebaseAuth fAuth;
     private static int count = 1;
 

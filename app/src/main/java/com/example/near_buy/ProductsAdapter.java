@@ -47,8 +47,8 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
         String TimeStamp = products.gettimeTemp();
         String uid = products.getUid();
         String Description = products.getDescription();
-        String Store = products.getProductStore();
-//        String Store = "Store name";
+        String Store = products.getStore();
+
 
 
         holder.product_name.setText("Product Name: " + ProductName);
