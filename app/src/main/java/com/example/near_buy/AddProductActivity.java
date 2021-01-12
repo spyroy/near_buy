@@ -112,7 +112,7 @@ public class AddProductActivity extends AppCompatActivity {
         hashMap.put("Description",productDecription);
         hashMap.put("timeTemp",timesTemp);
         hashMap.put("uid",""+firebaseAuth.getUid());
-        hashMap.put("storeName", "" + getIntent().getStringExtra("store_name"));
+        hashMap.put("Store", getIntent().getStringExtra("store_name"));
 
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");

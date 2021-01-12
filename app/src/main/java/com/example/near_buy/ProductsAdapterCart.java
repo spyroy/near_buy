@@ -100,7 +100,6 @@ public class ProductsAdapterCart extends RecyclerView.Adapter<ProductsAdapterCar
                 holder.MyDialog.show();
             }
         });
-
     }
 
 

@@ -26,6 +26,8 @@ public class add_product_user_activity extends AppCompatActivity {
     private ImageButton plus,minus,back;
     private Button add_to_cart;
     private String ProductName,price,product_quantity,id,description;
+    private String store;
+//    private String store = "Store";
     private FirebaseAuth fAuth;
     private static int count = 1;
 
@@ -42,6 +44,7 @@ public class add_product_user_activity extends AppCompatActivity {
         dollar1 = findViewById(R.id.originalPriceTv);
         number = findViewById(R.id.quantityTv);
 
+
         plus = findViewById(R.id.incrementBtn);
         minus = findViewById(R.id.decrementBtn);
         back = findViewById(R.id.back);
@@ -53,7 +56,7 @@ public class add_product_user_activity extends AppCompatActivity {
         product_quantity = getIntent().getStringExtra("quantity");
         id = getIntent().getStringExtra("ProductId");
         description = getIntent().getStringExtra("Description");
-
+        store = getIntent().getStringExtra("Store");
         fAuth = FirebaseAuth.getInstance();
 
         title.setText(ProductName);
@@ -96,9 +99,7 @@ public class add_product_user_activity extends AppCompatActivity {
                 onBackPressed();
                 AddToCart();
             }
-
         });
-
     }
 
     private void AddToCart() {
@@ -120,6 +121,7 @@ public class add_product_user_activity extends AppCompatActivity {
         hashMap.put("timeTemp",""+timesTemp);
         hashMap.put("uid",""+fAuth.getUid());
         hashMap.put("Description",""+description);
+        hashMap.put("Store", ""+ store);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("users");
         ref.child(Objects.requireNonNull(fAuth.getUid())).child("Cart").child(timesTemp).setValue(hashMap)

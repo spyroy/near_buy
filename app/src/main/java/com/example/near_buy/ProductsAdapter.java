@@ -47,6 +47,9 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
         String TimeStamp = products.gettimeTemp();
         String uid = products.getUid();
         String Description = products.getDescription();
+        String Store = products.getProductStore();
+//        String Store = "Store name";
+
 
         holder.product_name.setText("Product Name: " + ProductName);
         holder.price.setText("Price: " + ProductPrice);
@@ -72,6 +75,7 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Holder
                 intent.putExtra( "quantity", ProductQuantity);
                 intent.putExtra( "ProductId", ProductId);
                 intent.putExtra( "Description", Description);
+                intent.putExtra("Store", Store);
                 context.startActivity(intent);
             }
         });
